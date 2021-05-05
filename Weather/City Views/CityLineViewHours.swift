@@ -86,6 +86,8 @@ struct CityLineViewHours: View {
                     Spacer()
                     Text(pointOfTime1)
                     Spacer()
+                    Text(pointOfTime2)
+                    Spacer()
                     Text(pointOfTime3)
                     Spacer()
                     Text(pointOfTime4)
@@ -124,7 +126,7 @@ struct CityLineViewHours: View {
             }
             
             if UIScreen.screenWidth == 375.0  {
-                d0 = 54.00
+                d0 = 48.75  
                 d1 = 340.00
                 d2 = 0.85
             } else if UIScreen.screenWidth == 667.0 {
