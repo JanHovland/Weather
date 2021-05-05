@@ -655,6 +655,8 @@ struct CityDetailView: View {
                                     snow_Hour = (weatherDetail?.hourly[i].snow?.the1H)!
                                 }
                                 
+                                numberHourdataFirstDay = 0
+                                
                                 ///
                                 /// Type of expression is ambiguous without more context
                                 ///
@@ -904,22 +906,57 @@ struct hourly48HourView: View {
                 VStack (alignment: .leading) {
                     
                     ///
-                    /// Markere ukedagen
+                    /// Markere ukedagen med bakgrunn på hele linjen
                     ///
                     
                     if hourlyRecord.sectionHeading.count > 0 {
-                        Text(hourlyRecord.sectionHeading)
+                        HStack {
+                            Text(hourlyRecord.sectionHeading)
+                            Spacer()
+                        }
+                        .background(Color("Background"))
+                        .cornerRadius(4)
+                        .padding(.leading, -10)
+                        .padding(.trailing, -10)
                     }
                     
-                    HStack (alignment: .center, spacing: 10) {
-                        Image(hourlyRecord.weather_icon)
-                            .resizable()
-                            .frame(width: 40, height: 40, alignment: .center)
-                        let msg1 = String(format:"%.0f", hourlyRecord.temp)
-                        Text(msg1)
-                            .modifier(ForeGroundColor(temp: hourlyRecord.temp))
-                        Text("ºC")
-                            .font(.system(size: 12, weight: .regular))
+                    HStack {
+                        Group {
+                            Text(String(IntervalToHour(interval: (hourlyRecord.dt))))
+                            Spacer()
+                            Image(hourlyRecord.weather_icon)
+                                .resizable()
+                                .frame(width: 40, height: 40, alignment: .center)
+                            Spacer()
+                            let msg1 = String(format:"%.0f", hourlyRecord.temp)
+                            Text(msg1)
+                                .modifier(ForeGroundColor(temp: hourlyRecord.temp))
+                            Text("ºC")
+                            Spacer()
+                            let msg1 = String(format:"%.1f", hourlyRecord.rain!)
+                            if msg1 == "0.0" {
+                                Text("              ")
+                            } else {
+                                Text(msg1 + " mm")
+                            }
+                            Spacer()
+                        }
+                        Group {
+                            let msg1 = String(format:"%.0f", hourlyRecord.wind_speed)
+                            let msg2 = "(" + String(format:"%.0f", hourlyRecord.wind_gust) + ")"
+                            Text(msg1 + msg2)
+                            Spacer()
+                        }
+                        Group {
+                            Image("Arrow_north")
+                                .resizable()
+                                .frame(width: 40 , height: 40, alignment: .center)
+                                .rotationEffect(Angle(degrees: Double(hourlyRecord.wind_deg)), anchor: .center)
+                                .padding(.top, 5)
+                                .padding(.leading, -10)
+                            Spacer()
+                        }
+                        
                     }
                 }
             }
