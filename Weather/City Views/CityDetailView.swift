@@ -931,6 +931,7 @@ struct hourly48HourView: View {
                             let msg1 = String(format:"%.0f", hourlyRecord.temp)
                             Text(msg1)
                                 .modifier(ForeGroundColor(temp: hourlyRecord.temp))
+                                .font(.system(size: 18, weight: .regular))
                             Text("ºC")
                             Spacer()
                             let msg1 = String(format:"%.1f", hourlyRecord.rain!)
@@ -943,7 +944,7 @@ struct hourly48HourView: View {
                         }
                         Group {
                             let msg1 = String(format:"%.0f", hourlyRecord.wind_speed)
-                            let msg2 = "(" + String(format:"%.0f", hourlyRecord.wind_gust) + ")"
+                            let msg2 = " (" + String(format:"%.0f", hourlyRecord.wind_gust) + ")"
                             Text(msg1 + msg2)
                             Spacer()
                         }
