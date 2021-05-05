@@ -75,9 +75,13 @@ func IntervalToDate(interval: Int) -> String {
    return formatter.string(from: time as Date)
 }
 
-
-
-
+func IntervalToCompleteDayNameOfWeek(interval: Int) -> String {
+   let time = NSDate(timeIntervalSince1970: TimeInterval(interval))
+   let formatter = DateFormatter()
+   formatter.locale = Locale(identifier: "no")
+   formatter.dateFormat = "EEEE d. MMMM"
+   return formatter.string(from: time as Date)
+}
 
 ///
 /// https://www.w3schools.com/tags/ref_urlencode.ASP

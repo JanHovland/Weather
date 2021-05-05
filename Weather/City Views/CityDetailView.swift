@@ -263,71 +263,7 @@ struct CityDetailView: View {
                 /// Oversikt over de neste 48 timene
                 ///
                 
-//                  hourlyRecordScrollView(hourlyRecords: $hourlyRecords)
-//
-//                ///
-//                /// Viser oversikt over de neste dagene
-//                ///
-//
-//                ForEach(dailyRecords) { dailyRecord in
-//                    NavigationLink(destination: CityDayView(currentRecord: $currentRecord,
-//                                                            hourlyRecords: $hourlyRecords,
-//                                                            precipitation: $precipitation,
-//                                                            dailyRecords: dailyRecords,
-//                                                            currentRecordIndex: dailyRecord.index)) {
-//                        HStack (spacing: 0) {
-//                            HStack (spacing: 10) {
-//                                Text(String(IntervalToDate(interval: dailyRecord.dt)))
-//                                Text(dailyRecord.weather_description.capitalizingFirstLetter())
-//                                Spacer()
-//                            }
-//                            HStack (spacing: 0) {
-//                                let msg = String(format:"%.0f", dailyRecord.temp_min)
-//                                Text(msg)
-//                                    .modifier(ForeGroundColor(temp: dailyRecord.temp_min))
-//                                Text("/")
-//                                let msg1 = String(format:"%.0f", dailyRecord.temp_max)
-//                                Text(msg1)
-//                                    .modifier(ForeGroundColor(temp: dailyRecord.temp_max))
-//                                Text(" º C")
-//                                Image(dailyRecord.weather_icon)
-//                                    .resizable()
-//                                    .frame(width: 40, height: 40, alignment: .center)
-//                            }
-//                        }
-//                        .padding(.top, -10)
-//                        .padding(.bottom, -10)
-//                    }
-//                }
-                
-                ///
-                /// Oversikt over de neste 48 timene
-                ///
-                
-                List {
-                    ForEach(hourlyRecords) { hourlyRecord in
-                        
-                        HStack (alignment: .center, spacing: 10) {
-                            Text(String(IntervalToDayOfWeek(interval: hourlyRecord.dt)).capitalizingFirstLetter())
-                                .font(Font.custom("PT Mono", size: 13))
-//                                .font(.system(size: 12, design: .monospaced))
-                            Image(hourlyRecord.weather_icon)
-                                .resizable()
-                                .frame(width: 40, height: 40, alignment: .center)
-                            let msg1 = String(format:"%.0f", hourlyRecord.temp)
-                            Text(msg1)
-                                .modifier(ForeGroundColor(temp: hourlyRecord.temp))
-                            Text("ºC")
-                                .font(.system(size: 12, weight: .regular))
-                        }
-                        
-                    }
-                }
-                //.listStyle(SidebarListStyle())
-                .frame(height: 2500)
-                .padding(.top, 20)
-                .padding(.leading, -10)
-                .padding(.trailing, -10)
+                hourly48HourView(hourlyRecords: $hourlyRecords)
 
             }
         }
@@ -380,6 +316,10 @@ struct CityDetailView: View {
         var alerts_description = ""
         
         var numberOfAlerts = 0
+        
+        var sectionHeading = ""
+        var dt = ""
+        var lastDt = ""
         
         let predicate = NSPredicate(format: "city = %@", city)
         CloudKitCityRecord.fetchCityRecord(predicate: predicate)  { (result) in
@@ -678,17 +618,25 @@ struct CityDetailView: View {
                             
                             for i in 0..<48 {
                                 
-                                print("i = \(i) Tidspunkt = \(IntervalToDayOfWeekHourMin(interval: (weatherDetail?.hourly[i].dt)!))")
+                                dt = String(IntervalToWeekDay(interval: (weatherDetail?.hourly[i].dt)!))
                                 
                                 if i == 0 {
-                                    let a = Int(IntervalToHour(interval: (weatherDetail?.hourly[i].dt)!))
-                                    numberHourdataFirstDay = 24 - Int(a!)
-                                    print(numberHourdataFirstDay as Any)
+                                    lastDt = dt
+                                    sectionHeading = "I dag " + String(IntervalToCompleteDayNameOfWeek(interval: (weatherDetail?.hourly[i].dt)!))
+                                } else {
+                                    
+                                    if dt != lastDt {
+                                        sectionHeading = String(IntervalToCompleteDayNameOfWeek(interval: (weatherDetail?.hourly[i].dt)!).capitalizingFirstLetter())
+                                        lastDt = dt
+                                    } else {
+                                        sectionHeading = ""
+                                    }
                                 }
                                 
                                 ///
                                 /// Håndterer det tilfellet at wind_gust, rain og snow er nil (mangler eller har ingen verdi)
                                 ///
+                                
                                 if weatherDetail?.hourly[i].wind_gust == nil {
                                     wind_gustHour = 0.00
                                 } else {
@@ -713,7 +661,8 @@ struct CityDetailView: View {
                                 /// Årsak:     Eksempel:  let pop:  fra struct HourlyRecord:  var satt til feil type (Int istedet for Double
                                 ///
                                 
-                                let hourlyRecord = HourlyRecord(dt:                     (weatherDetail?.hourly[i].dt)!,
+                                let hourlyRecord = HourlyRecord(sectionHeading:         sectionHeading,
+                                                                dt:                     (weatherDetail?.hourly[i].dt)!,
                                                                 numberHourdataFirstDay: numberHourdataFirstDay,
                                                                 temp:                   (weatherDetail?.hourly[i].temp)!,
                                                                 feels_like:             (weatherDetail?.hourly[i].feels_like)!,
@@ -871,11 +820,6 @@ struct daylyRecordVerticalView: View {
     var dayIndex: Int
     @Binding var dailyRecords: [DailyRecord]
     
-    
-    ///
-    ///   Legge inn riktig
-    ///
-    
     var body: some View {
         VStack {
             HStack {
@@ -950,3 +894,39 @@ struct daylyRecordVerticalView: View {
     }
 }
            
+struct hourly48HourView: View {
+    
+    @Binding var hourlyRecords: [HourlyRecord]
+    
+    var body: some View {
+        List {
+            ForEach(hourlyRecords) { hourlyRecord in
+                VStack (alignment: .leading) {
+                    
+                    ///
+                    /// Markere ukedagen
+                    ///
+                    
+                    if hourlyRecord.sectionHeading.count > 0 {
+                        Text(hourlyRecord.sectionHeading)
+                    }
+                    
+                    HStack (alignment: .center, spacing: 10) {
+                        Image(hourlyRecord.weather_icon)
+                            .resizable()
+                            .frame(width: 40, height: 40, alignment: .center)
+                        let msg1 = String(format:"%.0f", hourlyRecord.temp)
+                        Text(msg1)
+                            .modifier(ForeGroundColor(temp: hourlyRecord.temp))
+                        Text("ºC")
+                            .font(.system(size: 12, weight: .regular))
+                    }
+                }
+            }
+        }
+        .padding(.top, 20)
+        .frame(height: 1000)
+    }
+}
+
+
