@@ -1,0 +1,177 @@
+/* CitySelectView */
+" already exists." = " finnes fra før.";
+
+/* CitySelectView */
+" is saved in CloudKit." = " er lagret i CoudKit.";
+
+/* PrecipitationStatus */
+" minutes" = " minuttene";
+
+/* CityDetailView */
+" Weather at: " = " Værmelding kl: ";
+
+/* MainWeatherView */
+"Add" = "Legg til";
+
+/* CitySelectView */
+"Add City" = "Legg til sted";
+
+/* CitySelectView */
+"Are you sure you want to save " = "Er du sikker på at du vil lagre ";
+
+/* refreshCityRecordDetail */
+"Atmosphere" = "Atmosphere";
+
+/* CitySelectView
+   MainWeatherView
+   ToDoView */
+"Cancel" = "Avbryt";
+
+/* refreshCityRecordDetail */
+"Clear" = "Klarvær";
+
+/* refreshCityRecordDetail */
+"Clouds" = "Skyet";
+
+/* MainWeatherView */
+"Delete " = "Slett ";
+
+/* MainWeatherView */
+"Delete + e " = "Slette ";
+
+/* No comment provided by engineer. */
+"Dew point: " = "Dugg punkt: ";
+
+/* refreshCityRecordDetail */
+"Drizzle" = "Duskregn";
+
+/* WindDirection */
+"E" = "Ø";
+
+/* CityDetailView */
+"Feels like: " = "Føles som: ";
+
+/* refreshCityRecordDetail */
+"Gale" = "Kuling";
+
+/* DailyDetailView */
+"Humidity" = "Luftfuktighet";
+
+/* No comment provided by engineer. */
+"Humidity: " = "Luftfuktighet: ";
+
+/* No comment provided by engineer. */
+"Location Search" = "Søk etter sted";
+
+/* MainWeatherView */
+"mm/h" = "mm/t";
+
+/* WindDirection */
+"N" = "N";
+
+/* WindDirection */
+"NE" = "NØ";
+
+/* SignInView */
+"No Internet connection for this " = "Ingen internet forbindelse for denne ";
+
+/* PrecipitationStatus */
+"No Precipitation for the next " = "Ikke noe nedbør i de neste ";
+
+/* CityDetailView */
+"No precipitation for the next 8 hours" = "Ikke noe nedbør i de neste 8 timene";
+
+/* WindDirection */
+"NW" = "NV";
+
+/* DailyDetailView */
+"Precipilation" = "Nedbør";
+
+/* PrecipitationStatus */
+"Precipitation will stop in " = "Nedbøren vil holde opp om ";
+
+/* DailyDetailView */
+"Pressure" = "Trykk";
+
+/* No comment provided by engineer. */
+"Pressure: " = "Trykk: ";
+
+/* DailyDetailView */
+"Probability of precipilation" = "Sannsynlighet for nedbør";
+
+/* No comment provided by engineer. */
+"Refresh" = "Frisk opp";
+
+/* No comment provided by engineer. */
+"Results" = "Resultater";
+
+/* WindDirection */
+"S" = "S";
+
+/* CitySelectView */
+"Save" = "Lagre";
+
+/* CitySelectView */
+"Save " = "Lagre ";
+
+/* CitySelectView */
+"Save this City" = "Lagre dette stedet";
+
+/* WindDirection */
+"SE" = "SØ";
+
+/* No comment provided by engineer. */
+"Search" = "Søk";
+
+/* refreshCityRecordDetail */
+"Snow" = "Snø";
+
+/* MainWeatherView */
+"Successfully deleted " = "Slettet ";
+
+/* CitySelectView */
+"Successfully saved " = "Lagret ";
+
+/* DailyDetailView */
+"Sunrise" = "Soloppgang";
+
+/* DailyDetailView */
+"Sunset" = "Solnedgang";
+
+/* WindDirection */
+"SW" = "SV";
+
+/* DailyDetailView */
+"Temperature max/min" = "Temperatur maks/min";
+
+/* refreshCityRecordDetail */
+"Thunderstorm" = "Tordenvær";
+
+/* DailyDetailView */
+"UV index" = "UV indeks";
+
+/* No comment provided by engineer. */
+"UV index: " = "UV indeks: ";
+
+/* No comment provided by engineer. */
+"Visibility: " = "Sikt: ";
+
+/* WindDirection */
+"W" = "V";
+
+/* CityAlertView
+   MainWeatherView */
+"Weather" = "Været";
+
+/* DailyDetailView */
+"Weather description" = "Værbeskrivelse";
+
+/* DailyDetailWindView */
+"Wind" = "Vind";
+
+/* No comment provided by engineer. */
+"Wind: " = "Vind: ";
+
+/* MainWeatherView */
+"Your Cities" = "Mine steder";
+
