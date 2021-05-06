@@ -10,6 +10,8 @@ import Foundation
 struct HourlyRecord: Identifiable {
     var id = UUID()
     var sectionHeading: String
+    var sunrise: String
+    var sunset: String
     var dt: Int
     var numberHourdataFirstDay: Int
     var temp: Double

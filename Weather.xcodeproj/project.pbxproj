@@ -19,6 +19,10 @@
 		DB19CC4926147BCC007E3304 /* HourlyRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB19CC4826147BCC007E3304 /* HourlyRecord.swift */; };
 		DB19CC4B26147E42007E3304 /* MinutelyRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB19CC4A26147E42007E3304 /* MinutelyRecord.swift */; };
 		DB1CA026261EDF46008A5BBA /* AlertRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1CA025261EDF46008A5BBA /* AlertRecord.swift */; };
+		DB36C27C26444566001E7318 /* CityHourly48HourView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB36C27B26444566001E7318 /* CityHourly48HourView.swift */; };
+		DB36C27E26444607001E7318 /* CityDailyRecordVerticalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB36C27D26444607001E7318 /* CityDailyRecordVerticalView.swift */; };
+		DB36C2802644467A001E7318 /* CityHourlyRecordScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB36C27F26444679001E7318 /* CityHourlyRecordScrollView.swift */; };
+		DB36C28226444756001E7318 /* CityCurrentRecordTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB36C28126444756001E7318 /* CityCurrentRecordTopView.swift */; };
 		DB4BA1D826244C6B005F4EF6 /* CityDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4BA1D726244C6B005F4EF6 /* CityDayView.swift */; };
 		DB4D4ED426419ED800AFCF51 /* Hud.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4D4ED326419ED800AFCF51 /* Hud.swift */; };
 		DB4D4ED626419EDF00AFCF51 /* HudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4D4ED526419EDF00AFCF51 /* HudView.swift */; };
@@ -65,6 +69,10 @@
 		DB19CC4826147BCC007E3304 /* HourlyRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyRecord.swift; sourceTree = "<group>"; };
 		DB19CC4A26147E42007E3304 /* MinutelyRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinutelyRecord.swift; sourceTree = "<group>"; };
 		DB1CA025261EDF46008A5BBA /* AlertRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertRecord.swift; sourceTree = "<group>"; };
+		DB36C27B26444566001E7318 /* CityHourly48HourView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityHourly48HourView.swift; sourceTree = "<group>"; };
+		DB36C27D26444607001E7318 /* CityDailyRecordVerticalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDailyRecordVerticalView.swift; sourceTree = "<group>"; };
+		DB36C27F26444679001E7318 /* CityHourlyRecordScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityHourlyRecordScrollView.swift; sourceTree = "<group>"; };
+		DB36C28126444756001E7318 /* CityCurrentRecordTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCurrentRecordTopView.swift; sourceTree = "<group>"; };
 		DB4BA1D726244C6B005F4EF6 /* CityDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDayView.swift; sourceTree = "<group>"; };
 		DB4D4ED326419ED800AFCF51 /* Hud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hud.swift; sourceTree = "<group>"; };
 		DB4D4ED526419EDF00AFCF51 /* HudView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HudView.swift; sourceTree = "<group>"; };
@@ -272,8 +280,12 @@
 			children = (
 				DB727914261F474600BC43FD /* CityAlertView.swift */,
 				DBE7F955261CAA5B008B6F3F /* CityBarCodeView.swift */,
+				DB36C28126444756001E7318 /* CityCurrentRecordTopView.swift */,
+				DB36C27D26444607001E7318 /* CityDailyRecordVerticalView.swift */,
 				DB4BA1D726244C6B005F4EF6 /* CityDayView.swift */,
 				DB9E07B425FE81A000449860 /* CityDetailView.swift */,
+				DB36C27B26444566001E7318 /* CityHourly48HourView.swift */,
+				DB36C27F26444679001E7318 /* CityHourlyRecordScrollView.swift */,
 				DB805A6A2627601800EECF2F /* CityLineViewHours.swift */,
 				DBE7F957261CAA96008B6F3F /* CityLineViewMinutes.swift */,
 				DB77397726315EE2006AE52E /* CityLineViewTemparature.swift */,
@@ -362,12 +374,14 @@
 				DB9E07B125FCB3A000449860 /* CloudKitCityRecord.swift in Sources */,
 				DB805A6B2627601800EECF2F /* CityLineViewHours.swift in Sources */,
 				DB556FD625F8E36F0047DC97 /* WeatherService.swift in Sources */,
+				DB36C2802644467A001E7318 /* CityHourlyRecordScrollView.swift in Sources */,
 				DBE7F956261CAA5B008B6F3F /* CityBarCodeView.swift in Sources */,
 				DBA0E56825FB9A1B00D1A65E /* String Extensions.swift in Sources */,
 				DB9E07BA25FF68AE00449860 /* SheetState.swift in Sources */,
 				DB9E07C025FFD09000449860 /* LocationService.swift in Sources */,
 				DB556FDC25F8EB340047DC97 /* WeatherViewModel.swift in Sources */,
 				DB9E07AB25FCA9BF00449860 /* PersistenceController.swift in Sources */,
+				DB36C27C26444566001E7318 /* CityHourly48HourView.swift in Sources */,
 				DB19CC4526126C94007E3304 /* CurrentRecord.swift in Sources */,
 				DB1CA026261EDF46008A5BBA /* AlertRecord.swift in Sources */,
 				DB556FC425F8CEC70047DC97 /* CityMainView.swift in Sources */,
@@ -376,8 +390,10 @@
 				DB0BA6842607502900C31AF3 /* WeatherViewModelDetail.swift in Sources */,
 				DB0BA68226074AB500C31AF3 /* WeatherServiceDetail.swift in Sources */,
 				DB4D4ED626419EDF00AFCF51 /* HudView.swift in Sources */,
+				DB36C27E26444607001E7318 /* CityDailyRecordVerticalView.swift in Sources */,
 				DB556FD925F8E5330047DC97 /* URL Extensions.swift in Sources */,
 				DB4D4ED426419ED800AFCF51 /* Hud.swift in Sources */,
+				DB36C28226444756001E7318 /* CityCurrentRecordTopView.swift in Sources */,
 				DB9E07B825FF688100449860 /* SettingsSheet.swift in Sources */,
 				DBAD9EFF2601374E00623BC1 /* ToDoView.swift in Sources */,
 				DB19CC4926147BCC007E3304 /* HourlyRecord.swift in Sources */,

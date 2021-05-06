@@ -44,13 +44,13 @@ struct CityDayView: View {
             ///  currentRecord top View
             ///
             
-            currentRecordTopView(currentRecord: $currentRecord)
+            CityCurrentRecordTopView(currentRecord: $currentRecord)
             
             ///
             /// Oversikt over de neste 48 timene
             ///
             
-            hourlyRecordScrollView(hourlyRecords: $hourlyRecords)
+            CityHourlyRecordScrollView(hourlyRecords: $hourlyRecords)
             
             ///
             //// Viser  idag + de 7 neste dagene
@@ -131,7 +131,7 @@ struct CityDayView: View {
                                 /// Daglige vær data
                                 ///
                                 
-                                daylyRecordVerticalView(dayIndex: index,
+                                CityDailyRecordVerticalView(dayIndex: index,
                                                         dailyRecords: $dailyRecords)
                                     .padding(.top, 20)
                                     .padding(.trailing, 20)

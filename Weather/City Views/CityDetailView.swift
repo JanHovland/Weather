@@ -89,7 +89,7 @@ struct CityDetailView: View {
                     ///  currentRecord top View
                     ///
                     
-                    currentRecordTopView(currentRecord: $currentRecord)
+                    CityCurrentRecordTopView(currentRecord: $currentRecord)
                     
                     ///
                     /// Varsel fra Meteorologisk Institutt
@@ -263,7 +263,7 @@ struct CityDetailView: View {
                 /// Oversikt over de neste 48 timene
                 ///
                 
-                hourly48HourView(hourlyRecords: $hourlyRecords)
+                CityHourly48HourView(hourlyRecords: $hourlyRecords)
 
             }
         }
@@ -616,19 +616,35 @@ struct CityDetailView: View {
                             /// Se: api.openweathermap.org/data/2.5/forecast?q=London,us
                             ///
                             
+                            var day = 0
+                            
+                            var sunrise = ""
+                            var sunset = ""
+                            
                             for i in 0..<48 {
-                                
                                 dt = String(IntervalToWeekDay(interval: (weatherDetail?.hourly[i].dt)!))
                                 
                                 if i == 0 {
                                     lastDt = dt
                                     sectionHeading = "I dag " + String(IntervalToCompleteDayNameOfWeek(interval: (weatherDetail?.hourly[i].dt)!))
+                                    sunrise = String(IntervalToHourMin(interval: dailyRecords[day].sunrise))
+                                    sunset =  String(IntervalToHourMin(interval: dailyRecords[day].sunset))
+                                    print(sunrise)
+                                    print(sunset)
+                                    day += 1
                                 } else {
                                     
                                     if dt != lastDt {
                                         sectionHeading = String(IntervalToCompleteDayNameOfWeek(interval: (weatherDetail?.hourly[i].dt)!).capitalizingFirstLetter())
                                         lastDt = dt
+                                        sunrise = String(IntervalToHourMin(interval: dailyRecords[day].sunrise))
+                                        sunset =  String(IntervalToHourMin(interval: dailyRecords[day].sunset))
+                                        print(sunrise)
+                                        print(sunset)
+                                        day += 1
                                     } else {
+                                        sunrise = ""
+                                        sunset = ""
                                         sectionHeading = ""
                                     }
                                 }
@@ -664,6 +680,8 @@ struct CityDetailView: View {
                                 ///
                                 
                                 let hourlyRecord = HourlyRecord(sectionHeading:         sectionHeading,
+                                                                sunrise:                sunrise,
+                                                                sunset:                 sunset,
                                                                 dt:                     (weatherDetail?.hourly[i].dt)!,
                                                                 numberHourdataFirstDay: numberHourdataFirstDay,
                                                                 temp:                   (weatherDetail?.hourly[i].temp)!,
@@ -735,236 +753,4 @@ struct CityDetailView: View {
     }
     
 }
-
-struct currentRecordTopView: View {
-    
-    @Binding var currentRecord: CurrentRecord
-    
-    var body: some View {
-        VStack (alignment: .center) {
-            
-            VStack {
-                let msg = Text(NSLocalizedString(" Weather at: ", comment: "currentRecordTopView"))
-                let dt = IntervalToHourMin(interval: currentRecord.dt)
-                Text("\(msg) \(dt)")
-                    .font(.system(size: 20, weight: .regular))
-                    .foregroundColor(.green)
-            }
-            
-            HStack (spacing: 0)  {
-                Image(currentRecord.weather_icon)
-                    .resizable()
-                    .frame(width: 40, height: 40, alignment: .center)
-                Text(currentRecord.weather_description.capitalizingFirstLetter())
-            }
-            
-            VStack {
-                HStack {
-                    Text("\(String(format:"%.0f", currentRecord.temp))")
-                        .modifier(ForeGroundColor(temp: currentRecord.temp))
-                    Text("º C")
-                }
-            }
-            .font(.system(size: 70, weight: .ultraLight))
-            .padding(.top, -10)
-            
-            ///
-            /// Temperaturen føles som
-            ///
-            
-            VStack {
-                HStack {
-                    Spacer()
-                    Text(NSLocalizedString("Feels like: ", comment: "currentRecordTopView"))
-                    Text(String(format:"%.0f", currentRecord.feels_like))
-                        .modifier(ForeGroundColor(temp: currentRecord.feels_like))
-                    Text("º C")
-                    Spacer()
-                }
-            }
-            .padding(.bottom, 10)
-        }
-    }
-}
-
-struct hourlyRecordScrollView: View {
-    
-    @Binding var hourlyRecords: [HourlyRecord]
-    
-    var body: some View {
-        VStack {
-            ScrollView(.horizontal, showsIndicators: false) {
-                LazyHStack (spacing: 10) {
-                    ForEach(hourlyRecords) { hourlyRecord in
-                        VStack (spacing: -5) {
-                            Text(String(IntervalToHourMin(interval: hourlyRecord.dt)))
-                            Image(hourlyRecord.weather_icon)
-                                .resizable()
-                                .frame(width: 40, height: 40, alignment: .center)
-                            HStack (spacing: 0) {
-                                let msg1 = String(format:"%.0f", hourlyRecord.temp)
-                                Text(msg1)
-                                    .modifier(ForeGroundColor(temp: hourlyRecord.temp))
-                                Text("ºC")
-                            }
-                        }
-                        .font(.system(size: 12, weight: .regular))
-                    }
-                }
-            }
-            .frame(height: 80)
-        }
-    }
-}
-
-struct daylyRecordVerticalView: View {
-    
-    var dayIndex: Int
-    @Binding var dailyRecords: [DailyRecord]
-    
-    var body: some View {
-        VStack {
-            HStack {
-                Text(NSLocalizedString("Precipitation", comment: "hourlyRecordVerticalView"))
-                Spacer()
-                Text("\(String(format:"%.1f", dailyRecords[dayIndex].rain_the1h!)) mm")
-            }
-            .padding(.bottom, 5)
-            
-            HStack {
-                Text(NSLocalizedString("Probability of precipication", comment: "hourlyRecordVerticalView"))
-                Spacer()
-                Text("\(String(format:"%.0f", dailyRecords[dayIndex].pop * 100))%")
-            }
-            .padding(.bottom, 5)
-            
-            HStack {
-                Text(NSLocalizedString("Wind", comment: "hourlyRecordVerticalView"))
-                Spacer()
-                HStack (spacing: 5) {
-                    Spacer()
-                    Text(String(format:"%.1f", dailyRecords[dayIndex].wind_speed) + "m/s")
-                    Text(WindDirection(deg: dailyRecords[dayIndex].wind_deg))
-                    Image("Arrow_north")
-                        .resizable()
-                        .frame(width: 32.5 , height: 32.5, alignment: .center)
-                        .rotationEffect(Angle(degrees: Double(dailyRecords[dayIndex].wind_deg)), anchor: .center)
-                        .padding(.leading, -5)
-                }
-                .padding(.trailing, -10)
-            }
-            .padding(.bottom, 5)
-            
-            HStack {
-                Text(NSLocalizedString("Pressure", comment: "hourlyRecordVerticalView"))
-                Spacer()
-                Text("\(dailyRecords[dayIndex].pressure) hPa")
-            }
-            .padding(.bottom, 5)
-
-            HStack {
-                Text(NSLocalizedString("Humidity", comment: "hourlyRecordVerticalView"))
-                Spacer()
-                Text("\(dailyRecords[dayIndex].humidity)%")
-            }
-            .padding(.bottom, 5)
-
-            HStack {
-                Text(NSLocalizedString("UV index", comment: "hourlyRecordVerticalView"))
-                Spacer()
-                Text(String(format:"%.1f", dailyRecords[dayIndex].uvi))
-            }
-            .padding(.bottom, 5)
-
-            HStack {
-                Text(NSLocalizedString("Sunrise", comment: "hourlyRecordVerticalView"))
-                Spacer()
-                Text(IntervalToHourMin(interval: dailyRecords[dayIndex].sunrise))
-                    .font(.custom("Andale Mono Normal", size: 13))
-            }
-            .padding(.bottom, 5)
-
-            HStack {
-                Text(NSLocalizedString("Sunset", comment: "hourlyRecordVerticalView"))
-                Spacer()
-                Text(IntervalToHourMin(interval: dailyRecords[dayIndex].sunset))
-                    .font(.custom("Andale Mono Normal", size: 13))
-            }
-            .padding(.bottom, 5)
-        }
-        .font(.system(size: 13, weight: .regular))
-    }
-}
-           
-struct hourly48HourView: View {
-    
-    @Binding var hourlyRecords: [HourlyRecord]
-    
-    var body: some View {
-        List {
-            ForEach(hourlyRecords) { hourlyRecord in
-                VStack (alignment: .leading) {
-                    
-                    ///
-                    /// Markere ukedagen med bakgrunn på hele linjen
-                    ///
-                    
-                    if hourlyRecord.sectionHeading.count > 0 {
-                        HStack {
-                            Text(hourlyRecord.sectionHeading)
-                            Spacer()
-                        }
-                        .background(Color("Background"))
-                        .cornerRadius(4)
-                        .padding(.leading, -10)
-                        .padding(.trailing, -10)
-                    }
-                    
-                    HStack {
-                        Group {
-                            Text(String(IntervalToHour(interval: (hourlyRecord.dt))))
-                            Spacer()
-                            Image(hourlyRecord.weather_icon)
-                                .resizable()
-                                .frame(width: 40, height: 40, alignment: .center)
-                            Spacer()
-                            let msg1 = String(format:"%.0f", hourlyRecord.temp)
-                            Text(msg1)
-                                .modifier(ForeGroundColor(temp: hourlyRecord.temp))
-                                .font(.system(size: 18, weight: .regular))
-                            Text("ºC")
-                            Spacer()
-                            let msg1 = String(format:"%.1f", hourlyRecord.rain!)
-                            if msg1 == "0.0" {
-                                Text("              ")
-                            } else {
-                                Text(msg1 + " mm")
-                            }
-                            Spacer()
-                        }
-                        Group {
-                            let msg1 = String(format:"%.0f", hourlyRecord.wind_speed)
-                            let msg2 = " (" + String(format:"%.0f", hourlyRecord.wind_gust) + ")"
-                            Text(msg1 + msg2)
-                            Spacer()
-                        }
-                        Group {
-                            Image("Arrow_north")
-                                .resizable()
-                                .frame(width: 40 , height: 40, alignment: .center)
-                                .rotationEffect(Angle(degrees: Double(hourlyRecord.wind_deg)), anchor: .center)
-                                .padding(.top, 5)
-                                .padding(.leading, -10)
-                            Spacer()
-                        }
-                        
-                    }
-                }
-            }
-        }
-        .padding(.top, 20)
-        .frame(height: 1000)
-    }
-}
-
 
