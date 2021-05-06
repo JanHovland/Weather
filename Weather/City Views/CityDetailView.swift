@@ -31,7 +31,6 @@ struct CityDetailView: View {
     
     @ObservedObject private var weatherVM = WeatherViewModel()
     @ObservedObject private var weatherVMDetail = WeatherViewModelDetail()
-//    @ObservedObject private var weatherVMDetailHour = WeatherViewModelDetailHour()
     
     @State private var dailyRecords = [DailyRecord]()
     @State private var hourlyRecords = [HourlyRecord]()
