@@ -97,7 +97,7 @@ struct CityDetailView: View {
                     
                     if alertButtonText.count > 0 {
                         Button(action: {
-                            alert_View()
+                            sheet.state = .alertView
                         })
                         {
                             HStack {
@@ -125,7 +125,7 @@ struct CityDetailView: View {
                             .padding(.top, 10)
                             .padding(.bottom, 10)
                     } else {
-                        PrecipitationStatus(minutesUntilRainStarts: $precipitation.minutesUntilRainStarts,
+                        CityPrecipitationStatus(minutesUntilRainStarts: $precipitation.minutesUntilRainStarts,
                                             minutesUntilRainStops: $precipitation.minutesUntilRainStops)
                             .font(.system(size: 13, weight: .regular))
                             .padding(.top, 10)
@@ -287,11 +287,7 @@ struct CityDetailView: View {
         }
     }
     
-    func alert_View() {
-        sheet.state = .alertView
-    }
-    
-    /// Rutine for å finn vær detaljene
+    /// Rutine for å finne vær detaljene
     func refreshCityRecordDetail() {
         
         var rainDaily: Double = 0.0
@@ -731,26 +727,6 @@ struct CityDetailView: View {
         }
     } /// refreshCityRecordDetail()
     
-    /// https://www.hackingwithswift.com/quick-start/swiftui/how-to-return-different-view-types
-    
-    struct PrecipitationStatus: View {
-        
-        @Binding var minutesUntilRainStarts: Int
-        @Binding var minutesUntilRainStops: Int
-        
-        var body: some View {
-            if minutesUntilRainStarts > 0 {
-                let msg = NSLocalizedString("No Precipitation for the next ", comment: "PrecipitationStatus")
-                let msg1 = NSLocalizedString(" minutes", comment: "PrecipitationStatus")
-                Text(msg + "\(minutesUntilRainStarts)" + msg1)
-            }
-            if minutesUntilRainStops > 0 {
-                let msg = NSLocalizedString("Precipitation will stop in ", comment: "PrecipitationStatus")
-                let msg1 = NSLocalizedString(" minutes", comment: "PrecipitationStatus")
-                Text(msg + "\(minutesUntilRainStops)" + msg1)
-            }
-        }
-    }
     
 }
 

@@ -23,6 +23,7 @@
 		DB36C27E26444607001E7318 /* CityDailyRecordVerticalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB36C27D26444607001E7318 /* CityDailyRecordVerticalView.swift */; };
 		DB36C2802644467A001E7318 /* CityHourlyRecordScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB36C27F26444679001E7318 /* CityHourlyRecordScrollView.swift */; };
 		DB36C28226444756001E7318 /* CityCurrentRecordTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB36C28126444756001E7318 /* CityCurrentRecordTopView.swift */; };
+		DB36C284264448A6001E7318 /* CityPrecipitationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB36C283264448A6001E7318 /* CityPrecipitationStatus.swift */; };
 		DB4BA1D826244C6B005F4EF6 /* CityDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4BA1D726244C6B005F4EF6 /* CityDayView.swift */; };
 		DB4D4ED426419ED800AFCF51 /* Hud.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4D4ED326419ED800AFCF51 /* Hud.swift */; };
 		DB4D4ED626419EDF00AFCF51 /* HudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4D4ED526419EDF00AFCF51 /* HudView.swift */; };
@@ -73,6 +74,7 @@
 		DB36C27D26444607001E7318 /* CityDailyRecordVerticalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDailyRecordVerticalView.swift; sourceTree = "<group>"; };
 		DB36C27F26444679001E7318 /* CityHourlyRecordScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityHourlyRecordScrollView.swift; sourceTree = "<group>"; };
 		DB36C28126444756001E7318 /* CityCurrentRecordTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCurrentRecordTopView.swift; sourceTree = "<group>"; };
+		DB36C283264448A6001E7318 /* CityPrecipitationStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityPrecipitationStatus.swift; sourceTree = "<group>"; };
 		DB4BA1D726244C6B005F4EF6 /* CityDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDayView.swift; sourceTree = "<group>"; };
 		DB4D4ED326419ED800AFCF51 /* Hud.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hud.swift; sourceTree = "<group>"; };
 		DB4D4ED526419EDF00AFCF51 /* HudView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HudView.swift; sourceTree = "<group>"; };
@@ -290,6 +292,7 @@
 				DBE7F957261CAA96008B6F3F /* CityLineViewMinutes.swift */,
 				DB77397726315EE2006AE52E /* CityLineViewTemparature.swift */,
 				DB556FC325F8CEC70047DC97 /* CityMainView.swift */,
+				DB36C283264448A6001E7318 /* CityPrecipitationStatus.swift */,
 				DB9E07B225FE7F8D00449860 /* CityRowView.swift */,
 				DB9E07BB25FF69B500449860 /* CitySelectView.swift */,
 				DB19CC4626135323007E3304 /* DailyDetailView.swift */,
@@ -393,6 +396,7 @@
 				DB36C27E26444607001E7318 /* CityDailyRecordVerticalView.swift in Sources */,
 				DB556FD925F8E5330047DC97 /* URL Extensions.swift in Sources */,
 				DB4D4ED426419ED800AFCF51 /* Hud.swift in Sources */,
+				DB36C284264448A6001E7318 /* CityPrecipitationStatus.swift in Sources */,
 				DB36C28226444756001E7318 /* CityCurrentRecordTopView.swift in Sources */,
 				DB9E07B825FF688100449860 /* SettingsSheet.swift in Sources */,
 				DBAD9EFF2601374E00623BC1 /* ToDoView.swift in Sources */,
