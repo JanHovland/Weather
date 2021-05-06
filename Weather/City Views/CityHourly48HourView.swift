@@ -36,13 +36,14 @@ struct CityHourly48HourView: View {
                         
                         VStack (alignment: .center) {
                             let msg = NSLocalizedString("Sunrise", comment: "hourly48HourView")
-                            Text(msg + ": " + hourlyRecord.sunrise)
+                            Text(msg + ":\t" + hourlyRecord.sunrise)
                             let msg1 = NSLocalizedString("Sunset", comment: "hourly48HourView")
-                            Text(msg1 + ": " + hourlyRecord.sunset)
+                            Text(msg1 + ":\t" + hourlyRecord.sunset)
                         }
                         .font(Font.footnote.weight(.regular))
                         .foregroundColor(.green)
                         .padding(.leading, 20)
+                        .padding(.top, 10)
                         
                     }
                     
