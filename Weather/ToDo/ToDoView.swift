@@ -12,12 +12,11 @@ var toDo_1 =
 
     i O S :
 
-    1. 🛑 Vurdere å legge rain variablene inn i struct precipitation
+    1. 🛑 Sjekke regn:
+          . meldingene
+          . Diagrammene
     2. 🛑 Få med snø i nedbør
-    3. 🛑 Knytte weather.id sammen med description
-    4. 🛑 Legg HUB som er en popup melding
-    5. 🛑 Legg inn soloppgang og solnedgang i de neste 48 timene
-    6. 🛑 Lage diagram med:
+    3. 🛑 Lage diagram med:
           . temperatur
           . bar for nedbør
           . vise verdien av temperaturen pr. dag
@@ -37,6 +36,11 @@ var toDo_3 =
   1. 🟢 Rettet oppdatering fra weatherVM.fetchWeather(city: cityRecord.city)
   2. 🟢 Legg inn refresh på CityMainView()
   3. 🟢 Fullføre hourlyRecordVerticalView()
+  4. 🟢 Har lagt rain variablene inn i struct precipitation
+  5. 🟢 Lagt inn HUB som er en popup melding
+  6. 🟢 Lagt inn soloppgang og solnedgang i de neste 48 timene
+
+
 
 """
 var toDo_4 =
