@@ -70,12 +70,6 @@ struct CityHourly48HourView: View {
                             Spacer()
                         }
                         Group {
-                            let msg1 = String(format:"%.0f", hourlyRecord.wind_speed)
-                            let msg2 = " (" + String(format:"%.0f", hourlyRecord.wind_gust) + ")"
-                            Text(msg1 + msg2)
-                            Spacer()
-                        }
-                        Group {
                             Image("Arrow_north")
                                 .resizable()
                                 .frame(width: 40 , height: 40, alignment: .center)
@@ -84,7 +78,12 @@ struct CityHourly48HourView: View {
                                 .padding(.leading, -10)
                             Spacer()
                         }
-                        
+                        Group {
+                            let msg1 = String(format:"%.0f", hourlyRecord.wind_speed)
+                            let msg2 = " (" + String(format:"%.0f", hourlyRecord.wind_gust) + ")"
+                            Text(msg1 + msg2)
+                            Spacer()
+                        }
                     }
                 }
             }

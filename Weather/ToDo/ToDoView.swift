@@ -12,13 +12,11 @@ var toDo_1 =
 
     i O S :
 
-    1. 🛑 Når det vises en alarm:
-          . Kan ikke dra opp view
-    2. 🛑 Sjekke regn:
+    1. 🛑 Sjekke regn:
           . meldingene
           . Diagrammene
-    3. 🛑 Få med snø i nedbør
-    4. 🛑 Lage diagram med:
+    2. 🛑 Få med snø i nedbør
+    3. 🛑 Lage diagram med:
           . temperatur
           . bar for nedbør
           . vise verdien av temperaturen pr. dag
@@ -44,6 +42,8 @@ var toDo_3 =
   7. 🟢 Graphene har nå riktig startpunkt:
           . CityLineViewMinutes
           . CityLineViewHours
+  0. 🟢 Rettet "minutesUntilRainStops"
+
 
 """
 var toDo_4 =
