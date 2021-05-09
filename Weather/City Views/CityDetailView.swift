@@ -599,6 +599,7 @@ struct CityDetailView: View {
                                 if precipitation.rain60Minutes[i] > 0.0 {
                                     precipitation.minutesUntilRainStops += 1
                                 } else {
+                                    precipitation.minutesUntilRainStops += precipitation.minutesUntilRainStarts
                                     break
                                 }
                             }
@@ -745,6 +746,7 @@ struct CityDetailView: View {
                                 if precipitation.rain8Hours[i] > 0.0 {
                                     precipitation.hoursUntilRainStops += 1
                                 } else {
+                                    precipitation.hoursUntilRainStops += precipitation.hoursUntilRainStarts
                                     break
                                 }
                             }
