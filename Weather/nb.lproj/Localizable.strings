@@ -5,9 +5,9 @@
 " is saved in CloudKit." = " er lagret i CoudKit.";
 
 /* PrecipitationStatus */
-" minutes" = " minuttene";
+" minutes" = " minutt";
 
-/* CityDetailView */
+/* currentRecordTopView */
 " Weather at: " = " Værmelding kl: ";
 
 /* MainWeatherView */
@@ -48,13 +48,14 @@
 /* WindDirection */
 "E" = "Ø";
 
-/* CityDetailView */
+/* currentRecordTopView */
 "Feels like: " = "Føles som: ";
 
 /* refreshCityRecordDetail */
 "Gale" = "Kuling";
 
-/* DailyDetailView */
+/* DailyDetailView
+   hourlyRecordVerticalView */
 "Humidity" = "Luftfuktighet";
 
 /* No comment provided by engineer. */
@@ -90,7 +91,8 @@
 /* PrecipitationStatus */
 "Precipitation will stop in " = "Nedbøren vil holde opp om ";
 
-/* DailyDetailView */
+/* DailyDetailView
+   hourlyRecordVerticalView */
 "Pressure" = "Trykk";
 
 /* No comment provided by engineer. */
@@ -132,10 +134,14 @@
 /* CitySelectView */
 "Successfully saved " = "Lagret ";
 
-/* DailyDetailView */
+/* DailyDetailView
+   hourly48HourView
+   hourlyRecordVerticalView */
 "Sunrise" = "Soloppgang";
 
-/* DailyDetailView */
+/* DailyDetailView
+   hourly48HourView
+   hourlyRecordVerticalView */
 "Sunset" = "Solnedgang";
 
 /* WindDirection */
@@ -147,7 +153,8 @@
 /* refreshCityRecordDetail */
 "Thunderstorm" = "Tordenvær";
 
-/* DailyDetailView */
+/* DailyDetailView
+   hourlyRecordVerticalView */
 "UV index" = "UV indeks";
 
 /* No comment provided by engineer. */
@@ -166,7 +173,8 @@
 /* DailyDetailView */
 "Weather description" = "Værbeskrivelse";
 
-/* DailyDetailWindView */
+/* DailyDetailWindView
+   hourlyRecordVerticalView */
 "Wind" = "Vind";
 
 /* No comment provided by engineer. */

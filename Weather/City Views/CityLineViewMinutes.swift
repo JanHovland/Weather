@@ -41,7 +41,17 @@ struct CityLineViewMinutes: View {
             Path { path in
                 let count = minutelyRecords.count
                 if minutelyRecords.count > 0 {
-                    path.move(to: CGPoint(x: 0, y: Double(outer.size.height)))
+                    
+                    ///
+                    /// Finner korrekt start posisjon
+                    ///
+                    
+                    let y = Double(getYpos (value: minutelyRecords[0].precipitation,
+                                            maxValue: precipitation.maxRain60Minutes,
+                                            yHeight: Double(outer.size.height)))
+                    
+                    path.move(to: CGPoint(x: 0, y: y))
+                    
                     for index in 0 ..< count {
                         if precipitation.maxRain60Minutes == 0.00 {
                             path.addLine(to: CGPoint(x: Double(Double(d0) * Double(index)), y: Double(outer.size.height)))

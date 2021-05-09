@@ -88,7 +88,8 @@ struct CityDetailView: View {
                     ///  currentRecord top View
                     ///
                     
-                    CityCurrentRecordTopView(currentRecord: $currentRecord)
+                    CityCurrentRecordTopView(currentRecord: $currentRecord,
+                                             dailyRecords: $dailyRecords)
                     
                     ///
                     /// Varsel fra Meteorologisk Institutt

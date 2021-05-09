@@ -52,7 +52,17 @@ struct CityLineViewHours: View {
                 let count = precipitation.rain8Hours.count
                 print("maxRain8Hours = \(precipitation.maxRain8Hours)")
                 if precipitation.rain8Hours.count > 0 {
-                    path.move(to: CGPoint(x: 0, y: Double(outer.size.height)))
+                    
+                    ///
+                    /// Finner korrekt start posisjon
+                    ///
+                    
+                    let y = Double(getYpos (value: precipitation.rain8Hours[0],
+                                            maxValue: precipitation.maxRain8Hours,
+                                            yHeight: Double(outer.size.height)))
+                    
+                    path.move(to: CGPoint(x: 0, y: y))
+                    
                     for index in 0 ..< count {
                         if precipitation.maxRain8Hours == 0.00 {
                             path.addLine(to: CGPoint(x: Double(Double(d0) * Double(index)), y: Double(outer.size.height)))

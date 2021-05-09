@@ -10,11 +10,19 @@ import SwiftUI
 struct CityCurrentRecordTopView: View {
     
     @Binding var currentRecord: CurrentRecord
+    @Binding var dailyRecords: [DailyRecord]
     
     var body: some View {
         VStack (alignment: .center) {
             
             VStack {
+                HStack {
+                    Spacer()
+                    MoonPhaseView(value: 1.00 - dailyRecords[0].moon_phase )
+                    Text("\(String(format:"%.2f", dailyRecords[0].moon_phase))")
+                    Spacer()
+                }
+                
                 let msg = Text(NSLocalizedString(" Weather at: ", comment: "currentRecordTopView"))
                 let dt = IntervalToHourMin(interval: currentRecord.dt)
                 Text("\(msg) \(dt)")
@@ -58,3 +66,30 @@ struct CityCurrentRecordTopView: View {
     }
 }
 
+struct MoonPhaseView: View {
+    
+    var value: Double
+    
+    var body: some View {
+        
+//        if 0.001...0.249 ~= value {
+//            Image("moon4")
+//        } else if 0.250...0.499 ~= value {
+//            Image("moom1")
+//        } else if 0.500...0.999 ~= value {
+//            Image("moon2")
+//        } else {
+//            Image("moon3")
+//        }
+        
+        if 0.001...0.499 ~= value {
+            Image("moon2")
+        } else if 0.000...0.000 ~= value {
+            Image("moon3")
+        } else if 0.500...0.999 ~= value {
+            Image("moon4")
+        } else {
+            Image("moon1")
+        }
+    }
+}

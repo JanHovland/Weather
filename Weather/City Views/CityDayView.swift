@@ -44,7 +44,9 @@ struct CityDayView: View {
             ///  currentRecord top View
             ///
             
-            CityCurrentRecordTopView(currentRecord: $currentRecord)
+            CityCurrentRecordTopView(currentRecord: $currentRecord,
+                                     dailyRecords: $dailyRecords)
+                                     
             
             ///
             /// Oversikt over de neste 48 timene
