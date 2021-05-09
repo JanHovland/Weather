@@ -560,40 +560,27 @@ struct CityDetailView: View {
                             print("rain60Minutes = \(precipitation.rain60Minutes)")
                             
                             ///
-                            ///  Finner antall minutter til regnet stopper / begynner
+                            ///  Finner antall minutter til regnet  begynner
                             ///
                             
-                            if precipitation.rain60Minutes.count > 0 {
-                                for i in 0..<precipitation.rain60Minutes.count {
-                                    if i == 0 {
-                                        if precipitation.rain60Minutes[i] == 0.0 {
-                                            self.precipitation.startsWithRain60Minutes = 0
-                                        } else {
-                                            self.precipitation.startsWithRain60Minutes = 1
-                                        }
-                                    } else {
-                                        if precipitation.startsWithRain60Minutes == 0 {
-                                            if precipitation.rain60Minutes[i] == 0.0 {
-                                                precipitation.minutesUntilRainStarts += 1
-                                            } else {
-                                                break
-                                            }
-                                        } else {
-                                            if precipitation.rain60Minutes[i] == 0.0 {
-                                                precipitation.minutesUntilRainStops += 1
-                                                break
-                                            }
-                                        }
-                                    }
+                            for i in 0..<precipitation.rain60Minutes.count {
+                                if precipitation.rain60Minutes[i] == 0.0 {
+                                    precipitation.minutesUntilRainStarts += 1
+                                } else {
+                                    break
                                 }
                             }
                             
-                            if precipitation.minutesUntilRainStarts == 59 {
-                                precipitation.minutesUntilRainStarts = 60
-                            }
+                            ///
+                            /// Finner antall minutter til regenet slutter
+                            ///
                             
-                            if precipitation.minutesUntilRainStops == 59 {
-                                precipitation.minutesUntilRainStops = 60
+                            for i in precipitation.minutesUntilRainStarts..<precipitation.rain60Minutes.count {
+                                if precipitation.rain60Minutes[i] > 0.0 {
+                                    precipitation.minutesUntilRainStops += 1
+                                } else {
+                                    break
+                                }
                             }
                             
                             ///
