@@ -137,7 +137,6 @@ struct CitySelectView: View {
                                                                                 message = city + msg
                                                                                 hudMessage = message
                                                                                 sheet.state = .hudView
-//                                                                                alertIdentifier = AlertID(id: .first) // HUD //
                                                                             case .failure(let err):
                                                                                 message = err.localizedDescription
                                                                                 alertIdentifier = AlertID(id: .first)

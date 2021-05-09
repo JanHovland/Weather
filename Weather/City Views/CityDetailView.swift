@@ -46,6 +46,8 @@ struct CityDetailView: View {
                                                      rain60Minutes: [Double](),
                                                      minutesUntilRainStarts: 0,
                                                      minutesUntilRainStops: 0,
+                                                     hoursUntilRainStarts: 0,
+                                                     hoursUntilRainStops: 0,
                                                      startsWithRain60Minutes: 0,
                                                      maxRain8Hours: 0.00,
                                                      rain8Hours: [Double]().dropLast(),
@@ -233,6 +235,24 @@ struct CityDetailView: View {
                     .padding(.trailing, 10)
                     .padding(.bottom, 10)
                     
+                    HStack {
+                        HStack {
+                            Text("hoursUntilRainStarts ")
+                                .font(.system(size: 11.5, weight: .regular))
+                            Text("\(precipitation.hoursUntilRainStarts)")
+                        }
+                        Spacer()
+                        HStack {
+                            Spacer()
+                            Text("hoursUntilRainStops ")
+                                .font(.system(size: 11.5, weight: .regular))
+                            Text("\(precipitation.hoursUntilRainStops)")
+                        }
+                    }
+                    .foregroundColor(.green)
+                    .padding(.leading, 10)
+                    .padding(.trailing, 10)
+                    .padding(.bottom, 10)
                 }
                 .font(.system(size: 13, weight: .regular))
                 /// Egendefinert farge Assets.xcassets
@@ -687,6 +707,7 @@ struct CityDetailView: View {
                                                                 snow:                   snow_Hour)
                                 
                                 hourlyRecords.append(hourlyRecord)
+                                
                                 if i < 8 {
                                     precipitation.rain8Hours.append(rain_Hour)
                                     if rain_Hour > precipitation.maxRain8Hours {
@@ -703,6 +724,31 @@ struct CityDetailView: View {
                                 }
                                 
                             } /// for
+                        
+                            ///
+                            ///  Finner antall minutter til regnet  begynner
+                            ///
+                            
+                            for i in 0..<precipitation.rain8Hours.count {
+                                if precipitation.rain8Hours[i] == 0.0 {
+                                    precipitation.hoursUntilRainStarts += 1
+                                } else {
+                                    break
+                                }
+                            }
+                        
+                            ///
+                            /// Finner antall minutter til regenet slutter
+                            ///
+                            
+                            for i in precipitation.hoursUntilRainStarts..<precipitation.rain8Hours.count {
+                                if precipitation.rain8Hours[i] > 0.0 {
+                                    precipitation.hoursUntilRainStops += 1
+                                } else {
+                                    break
+                                }
+                            }
+                        
                         case .failure(let err ) :
                             print("Fra currentRecord: \(err.localizedDescription) Sted: \(city)")
                         }

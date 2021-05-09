@@ -106,7 +106,6 @@ struct CityMainView: View {
                                                                         message =  msg + deletedCity
                                                                         hudMessage = message
                                                                         sheet.state = .hudView
-//                                                                        alertIdentifier = AlertID(id: .first) // HUD //
                                                                     case .failure(let err):
                                                                         message = err.localizedDescription
                                                                         alertIdentifier = AlertID(id: .first)
@@ -205,8 +204,6 @@ struct CityMainView: View {
         }
         
     } /// refreshCityRecords
-    
-
 
 }
 
