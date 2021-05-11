@@ -20,10 +20,10 @@ struct CityCurrentRecordTopView: View {
             VStack {
                 HStack {
                     Spacer()
-                    MoonPhaseSideView(width: 50, height: 50, whiteLeft: true)
-                    MoonPhaseWholeView(width: 50, height: 50, color: .black)
-                    MoonPhaseSideView(width: 50, height: 50, whiteLeft: false)
-                    MoonPhaseWholeView(width: 50, height: 50, color: .white)
+                    MoonPhaseView(value: dailyRecords[0].moon_phase)
+                    MoonPhaseView(value: 0.49)
+                    MoonPhaseView(value: 0.50)
+                    MoonPhaseView(value: 0.99)
                     Text("\(String(format:"%.2f", dailyRecords[0].moon_phase))")
                     Spacer()
                 }
@@ -71,34 +71,61 @@ struct CityCurrentRecordTopView: View {
     }
 }
 
-//struct MoonPhaseView: View {
-//
-//    var value: Double
-//
-//    var body: some View {
-//
-//        //        if 0.001...0.249 ~= value {
-//        //            Image("moon4")
-//        //        } else if 0.250...0.499 ~= value {
-//        //            Image("moom1")
-//        //        } else if 0.500...0.999 ~= value {
-//        //            Image("moon2")
-//        //        } else {
-//        //            Image("moon3")
-//        //        }
-//
-//        if 0.001...0.499 ~= value {
-//            Image("moon2")
-//        } else if 0.000...0.000 ~= value {
-//            Image("moon3")
-//        } else if 0.500...0.999 ~= value {
-//            Image("moon4")
-//        } else {
-//            Image("moon1")
-//        }
-//    }
-//}
+/*
+ 
+ 11. mai = 0        moon3
+ 12. mai = 0.02
+ 13. mai = 0.05
+ 14. mai = 0.08
+ 15. mai = 0.11
+ 16. mai = 0.14
+ 17. mai = 0.17
+ 18. mai = 0.20
+ 19. mai = (.25)    moon4
+ 20. mai =
+ 21. mai =
+ 22. mai =
+ 23. mai =
+ 24. mai =
+ 25. mai =
+ 26. mai = (.50)    moon1
+ 27. mai =
+ 28. mai =
+ 29. mai =
+ 30. mai =
+ 31. mai =
+  1. jun =
+  2. jun = (.75)    moon2
+  3. jun =
+  4. jun =
+  5. jun =
+  6. jun =
+  7. jun =
+  8. jun =
+  9. jun =
+ 10. jun = (0)      moon3
+ 11. jun = 
 
+
+*/
+
+struct MoonPhaseView: View {
+
+    var value: Double
+
+    var body: some View {
+
+        if 0.00...0.01 ~= value {
+            MoonPhaseWholeView(width: 40, height: 40, color: .black)
+        } else if 0.02...0.49 ~= value {
+            MoonPhaseSideView(width: 40, height: 40, left: .black)
+        } else if 0.50...0.51  ~= value {
+            MoonPhaseWholeView(width: 40, height: 40, color: .white)
+        } else {
+            MoonPhaseSideView(width: 40, height: 40, left: .white)
+        }
+    }
+}
 
 struct MoonPhaseSideView: View {
     
@@ -106,17 +133,17 @@ struct MoonPhaseSideView: View {
     
     var width: CGFloat
     var height: CGFloat
-    var whiteLeft: Bool
+    var left: Color
     
     var body: some View {
         
-        if whiteLeft {
+        if left == .white {
             Circle()
                 .trim(from: 0, to: 0.5)
                 .frame(width: width, height: height)
                 .rotationEffect(Angle(degrees: colorScheme == .dark ? 90 : 270), anchor: .center)
                 .overlay(Circle().stroke(colorScheme == .dark ? Color.white : Color.black, lineWidth: colorScheme == .dark ? 2 : 3))
-        } else {
+        } else if left == .black {
             Circle()
                 .trim(from: 0, to: 0.5)
                 .frame(width: width, height: height)
