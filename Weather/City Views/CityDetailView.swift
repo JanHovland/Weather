@@ -121,8 +121,18 @@ struct CityDetailView: View {
                     /// Ikke noe regn i løpet av de neste 8 timene
                     ///
                     
-                    if precipitation.maxRain8Hours ==  0.00 {
+                    if precipitation.maxRain8Hours ==  0.00 { // må ta med
                         Text(NSLocalizedString("No precipitation for the next 8 hours", comment: "CityDetailView"))
+                            .font(.system(size: 13, weight: .regular))
+                            .padding(.top, 10)
+                            .padding(.bottom, 10)
+                    } else if precipitation.maxRain60Minutes == 0.00 {        //////
+                        Text(NSLocalizedString("No precipitation for the next 60 minutes", comment: "CityDetailView"))
+                            .font(.system(size: 13, weight: .regular))
+                            .padding(.top, 10)
+                            .padding(.bottom, 10)
+                    } else if precipitation.minutesUntilRainStarts > 0  {        //////
+                        Text(NSLocalizedString("Precipitation for the next 60 minutes", comment: "CityDetailView"))
                             .font(.system(size: 13, weight: .regular))
                             .padding(.top, 10)
                             .padding(.bottom, 10)
@@ -727,7 +737,7 @@ struct CityDetailView: View {
                             } /// for
                         
                             ///
-                            ///  Finner antall minutter til regnet  begynner
+                            ///  Finner antall timer til regnet  begynner
                             ///
                             
                             for i in 0..<precipitation.rain8Hours.count {
@@ -739,7 +749,7 @@ struct CityDetailView: View {
                             }
                         
                             ///
-                            /// Finner antall minutter til regenet slutter
+                            /// Finner antall timer til regenet slutter
                             ///
                             
                             for i in precipitation.hoursUntilRainStarts..<precipitation.rain8Hours.count {

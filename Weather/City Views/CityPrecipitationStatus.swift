@@ -15,12 +15,12 @@ struct CityPrecipitationStatus: View {
     @Binding var minutesUntilRainStops: Int
     
     var body: some View {
-        if minutesUntilRainStarts > 0 {
+        
+        if 1...59 ~= minutesUntilRainStarts {
             let msg = NSLocalizedString("No Precipitation for the next ", comment: "PrecipitationStatus")
             let msg1 = NSLocalizedString(" minutes", comment: "PrecipitationStatus")
             Text(msg + "\(minutesUntilRainStarts)" + msg1)
-        }
-        if minutesUntilRainStops > 0 {
+        } else if 1...59 ~= minutesUntilRainStops {
             let msg = NSLocalizedString("Precipitation will stop in ", comment: "PrecipitationStatus")
             let msg1 = NSLocalizedString(" minutes", comment: "PrecipitationStatus")
             Text(msg + "\(minutesUntilRainStops)" + msg1)

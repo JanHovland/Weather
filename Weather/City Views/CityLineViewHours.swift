@@ -67,7 +67,7 @@ struct CityLineViewHours: View {
                         if precipitation.maxRain8Hours == 0.00 {
                             path.addLine(to: CGPoint(x: Double(Double(d0) * Double(index)), y: Double(outer.size.height)))
                         } else {
-                            print("hourlyRecords[index].rain! = \(precipitation.rain8Hours[index])")
+//                            print("hourlyRecords[index].rain! = \(precipitation.rain8Hours[index])")
                             let y = Double(getYpos (value: precipitation.rain8Hours[index],
                                                     maxValue: precipitation.maxRain8Hours,
                                                     yHeight: Double(outer.size.height)))
