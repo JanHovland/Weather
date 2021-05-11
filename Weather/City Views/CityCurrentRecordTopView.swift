@@ -21,9 +21,6 @@ struct CityCurrentRecordTopView: View {
                 HStack {
                     Spacer()
                     MoonPhaseView(value: dailyRecords[0].moon_phase)
-                    MoonPhaseView(value: 0.49)
-                    MoonPhaseView(value: 0.50)
-                    MoonPhaseView(value: 0.99)
                     Text("\(String(format:"%.2f", dailyRecords[0].moon_phase))")
                     Spacer()
                 }
