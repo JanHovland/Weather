@@ -53,7 +53,7 @@ struct CloudKitCityRecord {
         let query = CKQuery(recordType: RecordType.city, predicate: predicate)
         query.sortDescriptors = [sort]
         let operation = CKQueryOperation(query: query)
-        operation.desiredKeys = ["lat","lon","city","icon","temp","description","deg"]
+        operation.desiredKeys = ["lat","lon","city","icon","temp","description","deg","wind_speed", "wind_gust"]
         operation.resultsLimit = 500
         operation.recordFetchedBlock = { record in
             DispatchQueue.main.async {
@@ -68,6 +68,8 @@ struct CloudKitCityRecord {
                 if record["temp"] == nil { record["temp"] = 0.0 }
                 if record["description"] == nil { record["description"] = "" }
                 if record["deg"] == nil { record["deg"] = 0}
+                if record["wind_speed"] == nil { record["wind_speed"] = 0.0 }
+                if record["wind_gust"] == nil { record["wind_gust"] = 0.0 }
 
                 guard let lat = record["lat"] as? Double else { return }
                 guard let lon = record["lon"] as? Double else { return }
@@ -76,6 +78,8 @@ struct CloudKitCityRecord {
                 guard let temp = record["temp"] as? Double else { return }
                 guard let description = record["description"] as? String else { return }
                 guard let deg = record["deg"] as? Int else { return }
+                guard let wind_speed = record["wind_speed"] as? Double else { return }
+                guard let wind_gust = record["wind_gust"] as? Double else { return }
 
                 let cityRecord = CityRecord(recordID: recordID,
                                             lat: lat,
@@ -84,7 +88,9 @@ struct CloudKitCityRecord {
                                             icon: icon,
                                             temp: temp,
                                             description: description,
-                                            deg: deg)
+                                            deg: deg,
+                                            wind_speed: wind_speed,
+                                            wind_gust: wind_gust)
                                     
                 completion(.success(cityRecord))
             }
@@ -110,6 +116,9 @@ struct CloudKitCityRecord {
         cityRec["temp"] = cityRecord.temp as CKRecordValue
         cityRec["description"] = cityRecord.description as CKRecordValue
         cityRec["deg"] = cityRecord.deg as CKRecordValue
+        cityRec["wind_speed"] = cityRecord.wind_speed as CKRecordValue
+        cityRec["wind_gust"] = cityRecord.wind_gust! as CKRecordValue
+        
         CKContainer.default().privateCloudDatabase.save(cityRec) { (record, err) in
             DispatchQueue.main.async {
                 if let err = err {
@@ -157,6 +166,16 @@ struct CloudKitCityRecord {
                     return
                 }
 
+                guard let wind_speed = record["wind_speed"] as? Double else {
+                    completion(.failure(CloudKitHelperError.castFailure))
+                    return
+                }
+
+                guard let wind_gust = record["wind_gust"] as? Double else {
+                    completion(.failure(CloudKitHelperError.castFailure))
+                    return
+                }
+
                 let cityRecord = CityRecord(recordID: recordID,
                                             lat: lat,
                                             lon: lon,
@@ -164,7 +183,9 @@ struct CloudKitCityRecord {
                                             icon: icon,
                                             temp: temp,
                                             description: description,
-                                            deg: deg)
+                                            deg: deg,
+                                            wind_speed: wind_speed,
+                                            wind_gust: wind_gust)
                                          
                 completion(.success(cityRecord))
             }
@@ -194,6 +215,8 @@ struct CloudKitCityRecord {
             record["temp"] = cityRecord.temp as CKRecordValue
             record["description"] = cityRecord.description as CKRecordValue
             record["deg"] = cityRecord.deg as CKRecordValue
+            record["wind_speed"] = cityRecord.wind_speed as CKRecordValue
+            record["wind_gust"] = cityRecord.wind_gust as CKRecordValue?
 
             CKContainer.default().privateCloudDatabase.save(record) { (record, err) in
                 DispatchQueue.main.async {
@@ -236,6 +259,14 @@ struct CloudKitCityRecord {
                         completion(.failure(CloudKitHelperError.castFailure))
                         return
                     }
+                    guard let wind_speed = record["wind_speed"] as? Double else {
+                        completion(.failure(CloudKitHelperError.castFailure))
+                        return
+                    }
+                    guard let wind_gust = record["wind_gust"] as? Double else {
+                        completion(.failure(CloudKitHelperError.castFailure))
+                        return
+                    }
                     let cityRecord = CityRecord(recordID: recordID,
                                                 lat: lat,
                                                 lon: lon,
@@ -243,7 +274,9 @@ struct CloudKitCityRecord {
                                                 icon: icon,
                                                 temp: temp,
                                                 description: description,
-                                                deg: deg)
+                                                deg: deg,
+                                                wind_speed: wind_speed,
+                                                wind_gust: wind_gust)
                                          
                     completion(.success(cityRecord))
                 }

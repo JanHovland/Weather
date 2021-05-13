@@ -54,7 +54,7 @@ struct CityDetailView: View {
                                                      maxTemperature: 0.00)
     
     ///
-    /// Legg merke til CurrentRecord sine alerts_ felter alle er optional, så de trenger ikke initialiseres!
+    /// Legg merke til CurrentRecord sine alerts_ felter alle i tillegg til wind_gust er optional, så de trenger ikke initialiseres!
     ///
     
     @State private var currentRecord = CurrentRecord(dt: 0,
@@ -70,7 +70,6 @@ struct CityDetailView: View {
                                                      visibility: 0,
                                                      wind_speed: 0.0,
                                                      wind_deg: 0,
-                                                     wind_gust: 0.0,
                                                      weather_id: 0,
                                                      weather_main: "",
                                                      weather_description: "",

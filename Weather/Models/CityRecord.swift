@@ -18,4 +18,6 @@ struct CityRecord: Identifiable {
     var temp: Double
     var description: String
     var deg: Int
+    var wind_speed: Double
+    var wind_gust: Double?
 }

@@ -78,8 +78,8 @@ struct CityCurrentRecordTopView: View {
  16. mai = 0.14
  17. mai = 0.17
  18. mai = 0.20
- 19. mai = (.25)    moon4
- 20. mai =
+ 19. mai = 0.25    moon4
+ 20. mai = 0.27 
  21. mai =
  22. mai =
  23. mai =

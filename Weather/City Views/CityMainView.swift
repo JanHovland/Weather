@@ -182,6 +182,7 @@ struct CityMainView: View {
             switch result {
             case .success(let cityRecord):
                 DispatchQueue.main.async {
+                    print(cityRecord.city)
                     cityRecords.append(cityRecord)
                     cityRecords.sort(by: {$0.city < $1.city})
                 }

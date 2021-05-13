@@ -128,7 +128,10 @@ struct CitySelectView: View {
                                                                                                     icon: (weatherInfo?.weather[0].icon)!,
                                                                                                     temp: temp,
                                                                                                     description: (weatherInfo?.weather[0].description)!,
-                                                                                                    deg: (weatherInfo?.wind.deg)!)
+                                                                                                    deg: (weatherInfo?.wind.deg)!,
+                                                                                                    wind_speed: (weatherInfo?.wind.speed)!,
+                                                                                                    wind_gust: (weatherInfo?.wind.gust)!)
+                                                                                                    
                                                                         
                                                                         CloudKitCityRecord.saveCityRecord(cityRecord: cityRecord) { (result) in
                                                                             switch result {

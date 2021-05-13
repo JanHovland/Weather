@@ -58,7 +58,9 @@ class WeatherViewModel: ObservableObject {
                                                         icon: (weatherInfo?.weather[0].icon)!,
                                                         temp: (weatherInfo?.main.temp)!,
                                                         description: (weatherInfo?.weather[0].description)!.capitalizingFirstLetter(),
-                                                        deg: (weatherInfo?.wind.deg)!)
+                                                        deg: (weatherInfo?.wind.deg)!,
+                                                        wind_speed: (weatherInfo?.wind.speed)!,
+                                                        wind_gust: weatherInfo?.wind.gust)
                             DispatchQueue.main.async {
                             CloudKitCityRecord.modifyCityRecord(cityRecord: cityRecord) { (result) in
                                 switch result {
