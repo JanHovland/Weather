@@ -119,8 +119,8 @@ struct CitySelectView: View {
                                                                 WeatherService().getWeather(city: city) { result in
                                                                     switch result {
                                                                     case .success(let weatherInfo) :
-                                                                        let temp1 = (weatherInfo?.main.temp)!
-                                                                        let temp = round(temp1 - 273.15)*10/10
+                                                                        let temp = (weatherInfo?.main.temp)!
+                                                                        let wind_gust = weatherInfo?.wind.gust ?? 0.00
                                                                         let cityRecord = CityRecord(recordID: nil,
                                                                                                     lat: (weatherInfo?.coord.lat)!,
                                                                                                     lon: (weatherInfo?.coord.lon)!,
@@ -130,9 +130,8 @@ struct CitySelectView: View {
                                                                                                     description: (weatherInfo?.weather[0].description)!,
                                                                                                     deg: (weatherInfo?.wind.deg)!,
                                                                                                     wind_speed: (weatherInfo?.wind.speed)!,
-                                                                                                    wind_gust: (weatherInfo?.wind.gust)!)
+                                                                                                    wind_gust: wind_gust)
                                                                                                     
-                                                                        
                                                                         CloudKitCityRecord.saveCityRecord(cityRecord: cityRecord) { (result) in
                                                                             switch result {
                                                                             case .success:

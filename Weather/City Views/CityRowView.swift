@@ -32,13 +32,24 @@ struct CityRowView: View {
                     .frame(width: 50 , height: 50, alignment: .center)
                     .rotationEffect(Angle(degrees: Double(cityRecord.deg)), anchor: .center)
                     .padding(.bottom, -5)
-                
-                let msg1 = String(format:"%.0f", cityRecord.wind_speed)
-                let msg2 = " (" + String(format:"%.0f", cityRecord.wind_gust!) + ")"
-                Text(msg1 + msg2)
-            }
+                WindView(wind_speed: cityRecord.wind_speed,
+                         wind_gust: cityRecord.wind_gust!)
+           }
         }
         .font(.system(size: 16, weight: .regular))
+    }
+}
+
+@ViewBuilder
+func WindView(wind_speed: Double, wind_gust: Double) -> some View {
+    if wind_gust == 0.00 {
+        let msg1 = String(format:"%.0f", wind_speed)
+        let msg2 = " (" + String(format:"%.0f", wind_speed) + ")"
+        Text(msg1 + msg2)
+    } else {
+        let msg1 = String(format:"%.0f", wind_speed)
+        let msg2 = " (" + String(format:"%.0f", wind_gust) + ")"
+        Text(msg1 + msg2)
     }
 }
 

@@ -109,6 +109,7 @@ struct CloudKitCityRecord {
     /// MARK: - saving cityRecord to CloudKit
     static func saveCityRecord(cityRecord: CityRecord, completion: @escaping (Result<CityRecord, Error>) -> ()) {
         let cityRec = CKRecord(recordType: RecordType.city)
+        
         cityRec["lat"] = cityRecord.lat as CKRecordValue
         cityRec["lon"] = cityRecord.lon as CKRecordValue
         cityRec["city"] = cityRecord.city as CKRecordValue
@@ -117,7 +118,7 @@ struct CloudKitCityRecord {
         cityRec["description"] = cityRecord.description as CKRecordValue
         cityRec["deg"] = cityRecord.deg as CKRecordValue
         cityRec["wind_speed"] = cityRecord.wind_speed as CKRecordValue
-        cityRec["wind_gust"] = cityRecord.wind_gust! as CKRecordValue
+        cityRec["wind_gust"] = cityRecord.wind_gust as CKRecordValue?
         
         CKContainer.default().privateCloudDatabase.save(cityRec) { (record, err) in
             DispatchQueue.main.async {
