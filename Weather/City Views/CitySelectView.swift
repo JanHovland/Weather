@@ -120,7 +120,6 @@ struct CitySelectView: View {
                                                                     switch result {
                                                                     case .success(let weatherInfo) :
                                                                         let temp = (weatherInfo?.main.temp)!
-                                                                        let wind_gust = weatherInfo?.wind.gust ?? 0.00
                                                                         let cityRecord = CityRecord(recordID: nil,
                                                                                                     lat: (weatherInfo?.coord.lat)!,
                                                                                                     lon: (weatherInfo?.coord.lon)!,
@@ -130,7 +129,7 @@ struct CitySelectView: View {
                                                                                                     description: (weatherInfo?.weather[0].description)!,
                                                                                                     deg: (weatherInfo?.wind.deg)!,
                                                                                                     wind_speed: (weatherInfo?.wind.speed)!,
-                                                                                                    wind_gust: wind_gust)
+                                                                                                    wind_gust: weatherInfo?.wind.gust ?? 0.00)
                                                                                                     
                                                                         CloudKitCityRecord.saveCityRecord(cityRecord: cityRecord) { (result) in
                                                                             switch result {

@@ -59,7 +59,6 @@ class WeatherViewModel: ObservableObject {
                         case .success(let weatherInfo) :
                             DispatchQueue.main.async { [self] in
                                 self.weatherJsonModelInfo = weatherJsonModelInfo
-                                print("Fra fetchWeather: city = \(city)")
                                 let cityRecord = CityRecord(recordID: recordID,
                                                             lat: (weatherInfo?.coord.lat)!,
                                                             lon: (weatherInfo?.coord.lon)!,
@@ -69,7 +68,7 @@ class WeatherViewModel: ObservableObject {
                                                             description: (weatherInfo?.weather[0].description)!.capitalizingFirstLetter(),
                                                             deg: (weatherInfo?.wind.deg)!,
                                                             wind_speed: (weatherInfo?.wind.speed)!,
-                                                            wind_gust: (weatherInfo?.wind.gust) ?? 0.00)
+                                                            wind_gust: weatherInfo?.wind.gust ?? 0.00)
                                 
                                 DispatchQueue.main.async {
                                     CloudKitCityRecord.modifyCityRecord(cityRecord: cityRecord) { (result) in
