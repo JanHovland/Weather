@@ -10,7 +10,8 @@ import SwiftUI
 struct CityHourly48HourView: View {
     
     @Binding var hourlyRecords: [HourlyRecord]
-    
+    @Binding var dailyRecords: [DailyRecord]
+
     var body: some View {
         List {
             ForEach(hourlyRecords) { hourlyRecord in
@@ -21,8 +22,13 @@ struct CityHourly48HourView: View {
                     ///
                     
                     if hourlyRecord.sectionHeading.count > 0 {
+                    
                         HStack {
                             Text(hourlyRecord.sectionHeading)
+                            MoonPhaseView(value: hourlyRecord.moon_phase, size: 15)
+                                .font(.system(size: 15, weight: .ultraLight))
+                            Text(String(format:"%.2f", hourlyRecord.moon_phase))
+                                .font(.system(size: 15, weight: .regular))
                             Spacer()
                         }
                         .background(Color("Background"))

@@ -12,6 +12,7 @@ struct HourlyRecord: Identifiable {
     var sectionHeading: String
     var sunrise: String
     var sunset: String
+    var moon_phase: Double
     var dt: Int
     var numberHourdataFirstDay: Int
     var temp: Double

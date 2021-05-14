@@ -20,7 +20,7 @@ struct CityCurrentRecordTopView: View {
             VStack {
                 HStack {
                     Spacer()
-                    MoonPhaseView(value: dailyRecords[0].moon_phase)
+                    MoonPhaseView(value: dailyRecords[0].moon_phase, size: 40)
                     Text("\(String(format:"%.2f", dailyRecords[0].moon_phase))")
                     Spacer()
                 }
@@ -80,7 +80,7 @@ struct CityCurrentRecordTopView: View {
  18. mai = 0.20
  19. mai = 0.25    moon4
  20. mai = 0.27 
- 21. mai =
+ 21. mai = 0.31
  22. mai =
  23. mai =
  24. mai =
@@ -109,17 +109,18 @@ struct CityCurrentRecordTopView: View {
 struct MoonPhaseView: View {
 
     var value: Double
+    var size: CGFloat
 
     var body: some View {
 
         if 0.00...0.01 ~= value {
-            MoonPhaseWholeView(width: 40, height: 40, color: .black)
+            MoonPhaseWholeView(width: size, height: size, color: .black)
         } else if 0.02...0.49 ~= value {
-            MoonPhaseSideView(width: 40, height: 40, left: .black)
+            MoonPhaseSideView(width: size, height: size, left: .black)
         } else if 0.50...0.51  ~= value {
-            MoonPhaseWholeView(width: 40, height: 40, color: .white)
+            MoonPhaseWholeView(width: size, height: size, color: .white)
         } else {
-            MoonPhaseSideView(width: 40, height: 40, left: .white)
+            MoonPhaseSideView(width: size, height: size, left: .white)
         }
     }
 }
@@ -139,13 +140,13 @@ struct MoonPhaseSideView: View {
                 .trim(from: 0, to: 0.5)
                 .frame(width: width, height: height)
                 .rotationEffect(Angle(degrees: colorScheme == .dark ? 90 : 270), anchor: .center)
-                .overlay(Circle().stroke(colorScheme == .dark ? Color.white : Color.black, lineWidth: colorScheme == .dark ? 2 : 3))
+                .overlay(Circle().stroke(colorScheme == .dark ? Color.white : Color.black, lineWidth: colorScheme == .dark ? 1 : 2))
         } else if left == .black {
             Circle()
                 .trim(from: 0, to: 0.5)
                 .frame(width: width, height: height)
                 .rotationEffect(Angle(degrees: colorScheme == .dark ? 270 : 90), anchor: .center)
-                .overlay(Circle().stroke(colorScheme == .dark ? Color.white : Color.black, lineWidth: colorScheme == .dark ? 2 : 3))
+                .overlay(Circle().stroke(colorScheme == .dark ? Color.white : Color.black, lineWidth: colorScheme == .dark ? 1 : 2))
         }
     }
 }
@@ -162,7 +163,8 @@ struct MoonPhaseWholeView: View {
         Circle()
             .frame(width: width, height: height)
             .foregroundColor(color)
-            .overlay(Circle().stroke(colorScheme == .dark ? Color.white : Color.black, lineWidth: colorScheme == .dark ? 2 : 3))
+            .overlay(Circle().stroke(colorScheme == .dark ? Color.white : Color.black, lineWidth: colorScheme == .dark ? 1 : 2
+            ))
     }
 }
         

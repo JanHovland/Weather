@@ -292,7 +292,8 @@ struct CityDetailView: View {
                 /// Oversikt over de neste 48 timene
                 ///
                 
-                CityHourly48HourView(hourlyRecords: $hourlyRecords)
+                CityHourly48HourView(hourlyRecords: $hourlyRecords,
+                                     dailyRecords: $dailyRecords)
 
             }
         }
@@ -473,8 +474,6 @@ struct CityDetailView: View {
                                 numberOfAlerts = (weatherDetail?.alerts?.count)!
                             }
                             
-                            //                            print("numberOfAlerts: \(numberOfAlerts)")
-                            
                             for i in 0..<numberOfAlerts {
                                 
                                 if weatherDetail?.alerts?[i].event == nil {
@@ -633,6 +632,7 @@ struct CityDetailView: View {
                             
                             var sunrise = ""
                             var sunset = ""
+                            var moon_phase = 0.00
                             
                             for i in 0..<48 {
                                 dt = String(IntervalToWeekDay(interval: (weatherDetail?.hourly[i].dt)!))
@@ -642,8 +642,7 @@ struct CityDetailView: View {
                                     sectionHeading = "I dag " + String(IntervalToCompleteDayNameOfWeek(interval: (weatherDetail?.hourly[i].dt)!))
                                     sunrise = String(IntervalToHourMin(interval: dailyRecords[day].sunrise))
                                     sunset =  String(IntervalToHourMin(interval: dailyRecords[day].sunset))
-                                    print(sunrise)
-                                    print(sunset)
+                                    moon_phase =  dailyRecords[day].moon_phase
                                     day += 1
                                 } else {
                                     
@@ -652,12 +651,12 @@ struct CityDetailView: View {
                                         lastDt = dt
                                         sunrise = String(IntervalToHourMin(interval: dailyRecords[day].sunrise))
                                         sunset =  String(IntervalToHourMin(interval: dailyRecords[day].sunset))
-                                        print(sunrise)
-                                        print(sunset)
+                                        moon_phase =  dailyRecords[day].moon_phase
                                         day += 1
                                     } else {
                                         sunrise = ""
                                         sunset = ""
+                                        moon_phase =  dailyRecords[day].moon_phase
                                         sectionHeading = ""
                                     }
                                 }
@@ -695,6 +694,7 @@ struct CityDetailView: View {
                                 let hourlyRecord = HourlyRecord(sectionHeading:         sectionHeading,
                                                                 sunrise:                sunrise,
                                                                 sunset:                 sunset,
+                                                                moon_phase:             moon_phase,
                                                                 dt:                     (weatherDetail?.hourly[i].dt)!,
                                                                 numberHourdataFirstDay: numberHourdataFirstDay,
                                                                 temp:                   (weatherDetail?.hourly[i].temp)!,
