@@ -34,7 +34,7 @@ struct CityHourly48HourView: View {
                             /// Markere Måne fasen
                             ///
                             
-                            MoonPhaseView(value: hourlyRecord.moon_phase, size: 15)
+                            MoonPhaseView(value: hourlyRecord.moon_phase, size: 13)
                                 //.font(.system(size: 1, weight: .ultraLight))
                             Text(String(format:"%.2f", hourlyRecord.moon_phase))
                                 .font(.system(size: 11, weight: .regular))
