@@ -24,32 +24,40 @@ struct CityHourly48HourView: View {
                     if hourlyRecord.sectionHeading.count > 0 {
                     
                         HStack {
-                            Text(hourlyRecord.sectionHeading)
-                            MoonPhaseView(value: hourlyRecord.moon_phase, size: 15)
-                                .font(.system(size: 15, weight: .ultraLight))
-                            Text(String(format:"%.2f", hourlyRecord.moon_phase))
-                                .font(.system(size: 15, weight: .regular))
+                            Text(" " + hourlyRecord.sectionHeading)
+                                .font(.system(size: 12, weight: .bold))
+                                .foregroundColor(.accentColor)
+                            
                             Spacer()
+
+                            ///
+                            /// Markere Måne fasen
+                            ///
+                            
+                            MoonPhaseView(value: hourlyRecord.moon_phase, size: 15)
+                                //.font(.system(size: 1, weight: .ultraLight))
+                            Text(String(format:"%.2f", hourlyRecord.moon_phase))
+                                .font(.system(size: 11, weight: .regular))
+                            
+                            ///
+                            /// Markere soloppgang og solnedgang
+                            ///
+                            
+                            Image(systemName: "sunrise.fill")
+                                .font(.system(size: 14, weight: .regular))
+                            Text(hourlyRecord.sunrise)
+                                .font(.system(size: 11, weight: .regular))
+
+                            Image(systemName: "sunset.fill")
+                                .font(.system(size: 14, weight: .regular))
+                            Text(hourlyRecord.sunset + " ")
+                                .font(.system(size: 11, weight: .regular))
+                            
                         }
                         .background(Color("Background"))
                         .cornerRadius(4)
                         .padding(.leading, -10)
                         .padding(.trailing, -10)
-                        
-                        ///
-                        /// Markere soloppgang og solnedgang
-                        ///
-                        
-                        VStack (alignment: .center) {
-                            let msg = NSLocalizedString("Sunrise", comment: "hourly48HourView")
-                            Text(msg + ":\t" + hourlyRecord.sunrise)
-                            let msg1 = NSLocalizedString("Sunset", comment: "hourly48HourView")
-                            Text(msg1 + ":\t" + hourlyRecord.sunset)
-                        }
-                        .font(Font.footnote.weight(.regular))
-                        .foregroundColor(.green)
-                        .padding(.leading, 20)
-                        .padding(.top, 10)
                         
                     }
                     

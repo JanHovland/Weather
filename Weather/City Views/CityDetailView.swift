@@ -181,66 +181,66 @@ struct CityDetailView: View {
                     .padding(.trailing, 10)
                     .padding(.bottom, 10)
                     
-                    ///
-                    /// Data for test av PrecipitationStatus()
-                    ///
-                    
-                    HStack {
-                        HStack {
-                            Text("minutesUntilRainStarts ")
-                                .font(.system(size: 11.5, weight: .regular))
-                            Text("\(precipitation.minutesUntilRainStarts)")
-                        }
-                        Spacer()
-                        HStack {
-                            Spacer()
-                            Text("minutesUntilRainStops ")
-                                .font(.system(size: 11.5, weight: .regular))
-                            Text("\(precipitation.minutesUntilRainStops)")
-                        }
-                    }
-                    .foregroundColor(.green)
-                    .padding(.leading, 10)
-                    .padding(.trailing, 10)
-                    .padding(.bottom, 10)
-                    
-                    HStack {
-                        HStack {
-                            Text("maxRain60Minutes: ")
-                                .font(.system(size: 12, weight: .regular))
-                            Text(String(format:"%.2f", precipitation.maxRain60Minutes))
-                        }
-                        Spacer()
-                        HStack {
-                            Spacer()
-                            Text("maxRain8Hours")
-                                .font(.system(size: 12, weight: .regular))
-                            Text(String(format:"%.2f", precipitation.maxRain8Hours))
-                        }
-                    }
-                    .foregroundColor(.green)
-                    .padding(.leading, 10)
-                    .padding(.trailing, 10)
-                    .padding(.bottom, 10)
-                    
-                    HStack {
-                        HStack {
-                            Text("hoursUntilRainStarts ")
-                                .font(.system(size: 11.5, weight: .regular))
-                            Text("\(precipitation.hoursUntilRainStarts)")
-                        }
-                        Spacer()
-                        HStack {
-                            Spacer()
-                            Text("hoursUntilRainStops ")
-                                .font(.system(size: 11.5, weight: .regular))
-                            Text("\(precipitation.hoursUntilRainStops)")
-                        }
-                    }
-                    .foregroundColor(.green)
-                    .padding(.leading, 10)
-                    .padding(.trailing, 10)
-                    .padding(.bottom, 10)
+//                    ///
+//                    /// Data for test av PrecipitationStatus()
+//                    ///
+//
+//                    HStack {
+//                        HStack {
+//                            Text("minutesUntilRainStarts ")
+//                                .font(.system(size: 11.5, weight: .regular))
+//                            Text("\(precipitation.minutesUntilRainStarts)")
+//                        }
+//                        Spacer()
+//                        HStack {
+//                            Spacer()
+//                            Text("minutesUntilRainStops ")
+//                                .font(.system(size: 11.5, weight: .regular))
+//                            Text("\(precipitation.minutesUntilRainStops)")
+//                        }
+//                    }
+//                    .foregroundColor(.green)
+//                    .padding(.leading, 10)
+//                    .padding(.trailing, 10)
+//                    .padding(.bottom, 10)
+//
+//                    HStack {
+//                        HStack {
+//                            Text("maxRain60Minutes: ")
+//                                .font(.system(size: 12, weight: .regular))
+//                            Text(String(format:"%.2f", precipitation.maxRain60Minutes))
+//                        }
+//                        Spacer()
+//                        HStack {
+//                            Spacer()
+//                            Text("maxRain8Hours")
+//                                .font(.system(size: 12, weight: .regular))
+//                            Text(String(format:"%.2f", precipitation.maxRain8Hours))
+//                        }
+//                    }
+//                    .foregroundColor(.green)
+//                    .padding(.leading, 10)
+//                    .padding(.trailing, 10)
+//                    .padding(.bottom, 10)
+//                    
+//                    HStack {
+//                        HStack {
+//                            Text("hoursUntilRainStarts ")
+//                                .font(.system(size: 11.5, weight: .regular))
+//                            Text("\(precipitation.hoursUntilRainStarts)")
+//                        }
+//                        Spacer()
+//                        HStack {
+//                            Spacer()
+//                            Text("hoursUntilRainStops ")
+//                                .font(.system(size: 11.5, weight: .regular))
+//                            Text("\(precipitation.hoursUntilRainStops)")
+//                        }
+//                    }
+//                    .foregroundColor(.green)
+//                    .padding(.leading, 10)
+//                    .padding(.trailing, 10)
+//                    .padding(.bottom, 10)
                 }
                 .font(.system(size: 13, weight: .regular))
                 /// Egendefinert farge Assets.xcassets
