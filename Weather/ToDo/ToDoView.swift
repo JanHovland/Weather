@@ -12,15 +12,7 @@ var toDo_1 =
 
     i O S :
 
-    1. 🛑 Sjekke regn:
-          . meldingene
-          . Diagrammene
-    2. 🛑 Få med snø i nedbør
-    3. 🛑 Lage diagram med:
-          . temperatur
-          . bar for nedbør
-          . vise verdien av temperaturen pr. dag
-          . skille mellom inneværende dag og de neste dagene mht. skalering
+    1. 🛑 Få med snø i nedbør
  
 """
 
@@ -36,13 +28,14 @@ var toDo_3 =
   1. 🟢 Rettet oppdatering fra weatherVM.fetchWeather(city: cityRecord.city)
   2. 🟢 Legg inn refresh på CityMainView()
   3. 🟢 Fullføre hourlyRecordVerticalView()
-  4. 🟢 Har lagt rain variablene inn i struct precipitation
+  4. 🟢 Har lagt rain variablene inn i struct: Precipitation
   5. 🟢 Lagt inn HUB som er en popup melding
   6. 🟢 Lagt inn soloppgang og solnedgang i de neste 48 timene
   7. 🟢 Graphene har nå riktig startpunkt:
           . CityLineViewMinutes
           . CityLineViewHours
-  0. 🟢 Rettet "minutesUntilRainStops"
+  8. 🟢 Rettet "minutesUntilRainStops"
+  9. 🟢 Rettet visningen av nedbøren
 
 
 """
