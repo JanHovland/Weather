@@ -67,7 +67,6 @@ struct CityLineViewHours: View {
                         if precipitation.maxRain8Hours == 0.00 {
                             path.addLine(to: CGPoint(x: Double(Double(d0) * Double(index)), y: Double(outer.size.height)))
                         } else {
-//                            print("hourlyRecords[index].rain! = \(precipitation.rain8Hours[index])")
                             let y = Double(getYpos (value: precipitation.rain8Hours[index],
                                                     maxValue: precipitation.maxRain8Hours,
                                                     yHeight: Double(outer.size.height)))
@@ -136,7 +135,7 @@ struct CityLineViewHours: View {
             }
             
             if UIScreen.screenWidth == 375.0  {
-                d0 = 48.75  
+                d0 = 48.25 // 48.75  
                 d1 = 340.00
                 d2 = 0.85
             } else if UIScreen.screenWidth == 667.0 {

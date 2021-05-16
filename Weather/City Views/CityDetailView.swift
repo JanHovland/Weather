@@ -26,7 +26,7 @@ import SwiftUI
 struct CityDetailView: View {
     
     var city: String
-
+    
     @ObservedObject var sheet = SettingsSheet()
     
     @ObservedObject private var weatherVM = WeatherViewModel()
@@ -117,31 +117,10 @@ struct CityDetailView: View {
                     }
                     
                     ///
-                    /// Ikke noe regn i løpet av de neste 8 timene
+                    /// Beskrivelse av nedbøren de neste time(ne)
                     ///
                     
-                    if precipitation.maxRain8Hours ==  0.00 { // må ta med
-                        Text(NSLocalizedString("No precipitation for the next 8 hours", comment: "CityDetailView"))
-                            .font(.system(size: 13, weight: .regular))
-                            .padding(.top, 10)
-                            .padding(.bottom, 10)
-                    } else if precipitation.maxRain60Minutes == 0.00 {        //////
-                        Text(NSLocalizedString("No precipitation for the next 60 minutes", comment: "CityDetailView"))
-                            .font(.system(size: 13, weight: .regular))
-                            .padding(.top, 10)
-                            .padding(.bottom, 10)
-                    } else if precipitation.minutesUntilRainStarts > 0  {        //////
-                        Text(NSLocalizedString("Precipitation for the next 60 minutes", comment: "CityDetailView"))
-                            .font(.system(size: 13, weight: .regular))
-                            .padding(.top, 10)
-                            .padding(.bottom, 10)
-                    } else {
-                        CityPrecipitationStatus(minutesUntilRainStarts: $precipitation.minutesUntilRainStarts,
-                                            minutesUntilRainStops: $precipitation.minutesUntilRainStops)
-                            .font(.system(size: 13, weight: .regular))
-                            .padding(.top, 10)
-                            .padding(.bottom, 10)
-                    }
+                    CityPrecipitationStatus(precipitation: precipitation)
                 }
                 
                 ///
@@ -274,13 +253,13 @@ struct CityDetailView: View {
                 
                 VStack (alignment: .leading) {
                     if precipitation.maxRain60Minutes != 0.00 {
-                        Text(String(format:"%.1f", precipitation.maxRain60Minutes))
+                        Text(String(format:"%.2f", precipitation.maxRain60Minutes))
                             .font(.system(size: 13, weight: .regular))
                         CityLineViewMinutes(precipitation: $precipitation,
                                             minutelyRecords: $minutelyRecords)
-                              .padding(.leading, 20)
+                            .padding(.leading, 20)
                     } else if precipitation.maxRain8Hours != 0.00 {
-                        Text(String(format:"%.1f", precipitation.maxRain8Hours))
+                        Text(String(format:"%.2f", precipitation.maxRain8Hours))
                             .font(.system(size: 13, weight: .regular))
                         CityLineViewHours(precipitation: $precipitation,
                                           hourlyRecords: $hourlyRecords)
@@ -294,7 +273,7 @@ struct CityDetailView: View {
                 
                 CityHourly48HourView(hourlyRecords: $hourlyRecords,
                                      dailyRecords: $dailyRecords)
-
+                
             }
         }
         .onAppear() {
@@ -334,7 +313,7 @@ struct CityDetailView: View {
         var snow_Hour: Double = 0.0
         
         var numberHourdataFirstDay = 0
-
+        
         var alerts_sender_name = ""
         var alerts_event = ""
         var alerts_start = 0
@@ -564,11 +543,11 @@ struct CityDetailView: View {
                             ///
                             /// Henter Minute forecast for 1 hour
                             ///
- 
+                            
                             precipitation.maxRain60Minutes = 0.0
                             minutelyRecords.removeAll()
                             precipitation.rain60Minutes.removeAll()
-
+                            
                             for i in 0...59 {
                                 let minutelyRecord = MinutelyRecord(dt:            (weatherDetail?.minutely[i].dt)!,
                                                                     precipitation: (weatherDetail?.minutely[i].precipitation)!)
@@ -734,7 +713,7 @@ struct CityDetailView: View {
                                 }
                                 
                             } /// for
-                        
+                            
                             ///
                             ///  Finner antall timer til regnet  begynner
                             ///
@@ -746,7 +725,7 @@ struct CityDetailView: View {
                                     break
                                 }
                             }
-                        
+                            
                             ///
                             /// Finner antall timer til regenet slutter
                             ///
@@ -759,7 +738,13 @@ struct CityDetailView: View {
                                     break
                                 }
                             }
-                        
+                            
+                            print("** precipitation.minutesUntilRainStarts: \(precipitation.minutesUntilRainStarts)")
+                            print("** precipitation.minutesUntilRainStops: \(precipitation.minutesUntilRainStops) \n\n")
+                            
+                            print("*** precipitation.hoursUntilRainStarts: \(precipitation.hoursUntilRainStarts)")
+                            print("*** precipitation.hoursUntilRainStops: \(precipitation.hoursUntilRainStops)")
+
                         case .failure(let err ) :
                             print("Fra currentRecord: \(err.localizedDescription) Sted: \(city)")
                         }

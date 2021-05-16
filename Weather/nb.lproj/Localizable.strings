@@ -1,11 +1,14 @@
 /* CitySelectView */
 " already exists." = " finnes fra før.";
 
+/* CityDetailView */
+" hour(s)." = " time(r).";
+
 /* CitySelectView */
 " is saved in CloudKit." = " er lagret i CoudKit.";
 
-/* PrecipitationStatus */
-" minutes" = " minutt";
+/* CityDetailView */
+" minute(s)." = " minutt(er).";
 
 /* currentRecordTopView */
 " Weather at: " = " Værmelding kl: ";
@@ -76,11 +79,8 @@
 /* SignInView */
 "No Internet connection for this " = "Ingen internet forbindelse for denne ";
 
-/* PrecipitationStatus */
-"No Precipitation for the next " = "Ikke noe nedbør i de neste ";
-
 /* CityDetailView */
-"No precipitation for the next 8 hours" = "Ikke noe nedbør i de neste 8 timene";
+"No Precipitation in the next 8 hours." = "Ikke noe nedbør de neste 8 timene.";
 
 /* WindDirection */
 "NW" = "NV";
@@ -88,8 +88,17 @@
 /* DailyDetailView */
 "Precipilation" = "Nedbør";
 
-/* PrecipitationStatus */
-"Precipitation will stop in " = "Nedbøren vil holde opp om ";
+/* hourlyRecordVerticalView */
+"Precipitation" = "Nedbør";
+
+/* CityDetailView */
+"Precipitation in the next 8 hours." = "Nedbør de neste 8 timene.";
+
+/* CityDetailView */
+"Precipitation in the next 60 minutes." = "Nedbør de neste 60 minuttene.";
+
+/* CityDetailView */
+"Precipitation will start in " = "Nedbøren vil begynne om ";
 
 /* DailyDetailView
    hourlyRecordVerticalView */
