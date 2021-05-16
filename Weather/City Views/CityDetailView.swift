@@ -48,7 +48,6 @@ struct CityDetailView: View {
                                                      minutesUntilRainStops: 0,
                                                      hoursUntilRainStarts: 0,
                                                      hoursUntilRainStops: 0,
-                                                     startsWithRain60Minutes: 0,
                                                      maxRain8Hours: 0.00,
                                                      rain8Hours: [Double]().dropLast(),
                                                      maxTemperature: 0.00)
@@ -222,7 +221,7 @@ struct CityDetailView: View {
 //                    .padding(.leading, 10)
 //                    .padding(.trailing, 10)
 //                    .padding(.bottom, 10)
-//                    
+//
 //                    HStack {
 //                        HStack {
 //                            Text("hoursUntilRainStarts ")

@@ -15,7 +15,6 @@ struct Precipitation: Identifiable {
     var minutesUntilRainStops: Int
     var hoursUntilRainStarts: Int
     var hoursUntilRainStops: Int
-    var startsWithRain60Minutes: Int
     var maxRain8Hours: Double
     var rain8Hours = [Double]()
     var maxTemperature: Double
