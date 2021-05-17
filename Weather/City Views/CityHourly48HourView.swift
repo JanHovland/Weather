@@ -63,7 +63,7 @@ struct CityHourly48HourView: View {
                     
                     HStack {
                         Group {
-                            Text(String(IntervalToHour(interval: (hourlyRecord.dt))))
+                            Text(String(IntervalToHourMin(interval: (hourlyRecord.dt))))
                             Spacer()
                             Image(hourlyRecord.weather_icon)
                                 .resizable()
@@ -99,6 +99,7 @@ struct CityHourly48HourView: View {
                             Spacer()
                         }
                     }
+                    .font(.system(size: 15, weight: .regular))
                 }
             }
         }
