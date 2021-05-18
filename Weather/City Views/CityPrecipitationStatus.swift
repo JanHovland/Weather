@@ -20,20 +20,20 @@ struct CityPrecipitationStatus: View {
                 ///
                 /// Det  regner i løpet av de neste 60 minuttene
                 ///
-                let msg = NSLocalizedString("Precipitation will start in ", comment: "CityDetailView")
+                let msg = NSLocalizedString("Precipitation will start in about ", comment: "CityDetailView")
                 let msg1 = NSLocalizedString(" minute(s).",  comment: "CityDetailView")
                 Text(msg + "\(precipitation.minutesUntilRainStarts)" + msg1)
             } else if precipitation.maxRain60Minutes > 0.00, precipitation.minutesUntilRainStarts == 0 {
                 ///
                 /// Det  regner i løpet av de neste 60 minuttene
                 ///
-                let msg = NSLocalizedString("Precipitation in the next 60 minutes.", comment: "CityDetailView")
+                let msg = NSLocalizedString("Precipitation in the next hour.", comment: "CityDetailView")
                 Text(msg)
             } else if precipitation.maxRain8Hours > 0.00, precipitation.hoursUntilRainStarts > 0 {
                 ///
                 /// Det regn i løpet av de neste 8 timene
                 ///
-                let msg = NSLocalizedString("Precipitation will start in ", comment: "CityDetailView")
+                let msg = NSLocalizedString("Precipitation will start in about ", comment: "CityDetailView")
                 let msg1 = NSLocalizedString(" hour(s).",  comment: "CityDetailView")
                 Text(msg + "\(precipitation.hoursUntilRainStarts)" + msg1)
             } else if precipitation.maxRain8Hours > 0.00, precipitation.hoursUntilRainStarts == 0 {

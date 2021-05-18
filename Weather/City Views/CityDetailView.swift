@@ -74,6 +74,8 @@ struct CityDetailView: View {
                                                      weather_description: "",
                                                      weather_icon: "000")
     
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
         List {
             if currentRecord.weather_icon != "000" {
@@ -283,21 +285,6 @@ struct CityDetailView: View {
         }
         .sheet(isPresented: $sheet.isShowing, content: sheetContent)
         .navigationBarTitle((currentRecord.weather_icon != "000") ?  city : "")
-//        .navigationBarItems(trailing:
-//                                Button(action: {
-//                                    refreshCityRecordDetail()
-//                                    //                                    if UserDefaults.standard.string(forKey: "eMailOptionSelected") == "Aktivert" {
-//                                    //                                    self.isShowingMailView.toggle()
-//                                    //                                    } else {
-//                                    //                                        self.message = NSLocalizedString("You must activate the sending of an email.", comment: "SendMailView")
-//                                    //                                        alertIdentifier = AlertID(id: .first)
-//                                    //
-//                                    //                                    }
-//                                }, label: {
-//                                    Text(NSLocalizedString("Refresh", comment: "CityDetailView"))
-//                                        .font(Font.headline.weight(.light))
-//                                })
-//        )
     }
     
     /// Her legges det inn knytning til aktuelle view

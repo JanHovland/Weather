@@ -92,13 +92,13 @@
 "Precipitation" = "Nedbør";
 
 /* CityDetailView */
-"Precipitation in the next 8 hours." = "Nedbør de neste 8 timene.";
+"Precipitation in the next 8 hours." = "Det blir nedbør i løpet av de neste 8 timene.";
 
 /* CityDetailView */
-"Precipitation in the next 60 minutes." = "Nedbør de neste 60 minuttene.";
+"Precipitation in the next hour." = "Det blir nedbør i løpet av den neste timen.";
 
 /* CityDetailView */
-"Precipitation will start in " = "Nedbøren vil begynne om ";
+"Precipitation will start in about " = "Nedbøren vil starte om circa ";
 
 /* DailyDetailView
    hourlyRecordVerticalView */
@@ -144,12 +144,10 @@
 "Successfully saved " = "Lagret ";
 
 /* DailyDetailView
-   hourly48HourView
    hourlyRecordVerticalView */
 "Sunrise" = "Soloppgang";
 
 /* DailyDetailView
-   hourly48HourView
    hourlyRecordVerticalView */
 "Sunset" = "Solnedgang";
 

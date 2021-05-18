@@ -25,7 +25,7 @@ struct CityHourly48HourView: View {
                     
                         HStack {
                             Text(" " + hourlyRecord.sectionHeading)
-                                .font(.system(size: 12, weight: .bold))
+                                .font(.system(size: 13, weight: .bold))
                                 .foregroundColor(.accentColor)
                             
                             Spacer()
@@ -35,7 +35,6 @@ struct CityHourly48HourView: View {
                             ///
                             
                             MoonPhaseView(value: hourlyRecord.moon_phase, size: 13)
-                                //.font(.system(size: 1, weight: .ultraLight))
                             Text(String(format:"%.2f", hourlyRecord.moon_phase))
                                 .font(.system(size: 11, weight: .regular))
                             
@@ -58,7 +57,6 @@ struct CityHourly48HourView: View {
                         .cornerRadius(4)
                         .padding(.leading, -10)
                         .padding(.trailing, -10)
-                        
                     }
                     
                     HStack {
