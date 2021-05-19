@@ -98,7 +98,7 @@
 "Precipitation in the next hour." = "Det blir nedbør i løpet av den neste timen.";
 
 /* CityDetailView */
-"Precipitation will start in about " = "Nedbøren vil starte om circa ";
+"Precipitation will start in about " = "Nedbøren vil starte om ca ";
 
 /* DailyDetailView
    hourlyRecordVerticalView */

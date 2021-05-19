@@ -79,7 +79,7 @@ func IntervalToCompleteDayNameOfWeek(interval: Int) -> String {
    let time = NSDate(timeIntervalSince1970: TimeInterval(interval))
    let formatter = DateFormatter()
    formatter.locale = Locale(identifier: "no")
-   formatter.dateFormat = "EEEE d. MMMM"
+   formatter.dateFormat = "EEEE d. MMM"
    return formatter.string(from: time as Date)
 }
 
