@@ -160,6 +160,9 @@
 /* refreshCityRecordDetail */
 "Thunderstorm" = "Tordenvær";
 
+/* refreshCityRecordDetail */
+"Today " = "Nå ";
+
 /* DailyDetailView
    hourlyRecordVerticalView */
 "UV index" = "UV indeks";

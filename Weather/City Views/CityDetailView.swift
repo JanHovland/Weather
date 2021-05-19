@@ -619,7 +619,8 @@ struct CityDetailView: View {
                                 
                                 if i == 0 {
                                     lastDt = dt
-                                    sectionHeading = "I dag " + String(IntervalToCompleteDayNameOfWeek(interval: (weatherDetail?.hourly[i].dt)!))
+                                    let msg = NSLocalizedString("Today ", comment: "refreshCityRecordDetail")
+                                    sectionHeading = msg + String(IntervalToCompleteDayNameOfWeek(interval: (weatherDetail?.hourly[i].dt)!))
                                     sunrise = String(IntervalToHourMin(interval: dailyRecords[day].sunrise))
                                     sunset =  String(IntervalToHourMin(interval: dailyRecords[day].sunset))
                                     moon_phase =  dailyRecords[day].moon_phase

@@ -25,7 +25,7 @@ struct CityHourly48HourView: View {
                     
                         HStack {
                             Text(" " + hourlyRecord.sectionHeading)
-                                .font(.system(size: 13, weight: .bold))
+                                .font(.system(size: 14, weight: .bold))
                                 .foregroundColor(.accentColor)
                             
                             Spacer()
