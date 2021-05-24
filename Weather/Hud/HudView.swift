@@ -8,20 +8,18 @@
 import SwiftUI
 
 ///
-/// Bruk:          HudView(textMessage: "textMessage",   backGroundColor: Color.green)
+/// Bruk:          HudView(textMessage: "textMessage")
 ///
 
 struct HudView: View {
     var hudMessage: String
-    var backGroundColor: Color
     
     @Environment(\.presentationMode) var presentationMode
     
     @State private var showHUD = false
     var body: some View {
-        Hud(content: showHUD ? Text(hudMessage) : Text(""))
-            .background(showHUD ? backGroundColor : Color.clear)
-            .cornerRadius(15)
+        Hud(hudMessage: hudMessage)
+            .cornerRadius(10)
             .onAppear() {
                 self.showHUD = true
                 dismissHUD()

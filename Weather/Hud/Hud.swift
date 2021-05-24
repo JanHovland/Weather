@@ -7,12 +7,29 @@
 
 import SwiftUI
 
-struct Hud<Content: View>: View {
-    var content: Content
+struct Hud: View {
+    var hudMessage: String
     @ViewBuilder var body: some View {
-        content
+        Label(hudMessage, systemImage: "xmark.octagon.fill") /// <------------------ må ha systemImage som variabel
+            .foregroundColor(Color("ForegroundColor"))
+            .background(
+                Blur(style: .systemMaterial)
+                    .clipShape(Capsule())
+            )
             .padding(.horizontal, 10)
-            .padding(10)
-            .frame(width: 200, height: 100, alignment: .center)
+            .padding(14)
     }
 }
+
+struct Blur: UIViewRepresentable {
+    var style: UIBlurEffect.Style
+    
+    func makeUIView(context: Context) -> UIVisualEffectView {
+        return UIVisualEffectView(effect: UIBlurEffect(style: style))
+    }
+    
+    func updateUIView(_ uiView: UIVisualEffectView, context: Context) {
+        uiView.effect = UIBlurEffect(style: style)
+    }
+}
+

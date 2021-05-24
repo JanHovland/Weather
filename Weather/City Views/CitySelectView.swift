@@ -158,8 +158,7 @@ struct CitySelectView: View {
     @ViewBuilder
     private func sheetContent() -> some View {
         if sheet.state == .hudView {
-            HudView(hudMessage: hudMessage,
-                    backGroundColor: Color.green)
+            HudView(hudMessage: hudMessage)
         } else {
             EmptyView()
         }

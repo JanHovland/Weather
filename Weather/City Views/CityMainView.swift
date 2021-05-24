@@ -165,8 +165,7 @@ struct CityMainView: View {
         if sheet.state == .cityView {
             CitySelectView(locationService: LocationService())
         } else if sheet.state == .hudView {
-            HudView(hudMessage: hudMessage,
-                    backGroundColor: Color.green)
+            HudView(hudMessage: hudMessage)
         } else {
             EmptyView()
         }
