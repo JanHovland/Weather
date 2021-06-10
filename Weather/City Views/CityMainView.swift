@@ -4,12 +4,20 @@
 //
 //  Created by Jan Hovland on 10/03/2021.
 //
+//  Xcode 13: 
+//
+//  Kommentar :  command + ´ ( venstre for slett)
+//  Innrykk:     shift + control + command + 8 (tall tastaturet)
+//
+//  Apple Developer Documentation: shift + command + 0 (tall tastaturet)
+//
 
 ///
 /// http://api.openweathermap.org/data/2.5/weather?q=London&appid={API key}
 ///
 
-let apiKey = "{API key}"
+// let apiKey = "{API key}"
+let apiKey = "f250e7938c2239c25a356a30167d214d"
 
 import SwiftUI
 import CloudKit
