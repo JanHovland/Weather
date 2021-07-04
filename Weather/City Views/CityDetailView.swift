@@ -272,7 +272,7 @@ struct CityDetailView: View {
                 /// Oversikt over de neste 48 timene
                 ///
                 
-                CityHourly48HourView(hourlyRecords: $hourlyRecords)
+//                CityHourly48HourView(hourlyRecords: $hourlyRecords)
 //                                     dailyRecords: $dailyRecords)
                 
             }

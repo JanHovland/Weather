@@ -67,6 +67,9 @@ struct CityMainView: View {
                     })
                 }
             }
+            .refreshable {
+               refreshCityRecords()
+            }
             .listStyle(InsetListStyle())           /// GroupedListStyle())
             .navigationBarTitle(Text(NSLocalizedString("Weather", comment: "MainWeatherView")))
             .navigationBarItems(leading:
@@ -92,7 +95,7 @@ struct CityMainView: View {
                 /// Uten denne, kan det komme melding selv om Internett er tilhjengelig
                 sleep(1)
                 startInternetTracking()
-                refreshCityRecords()
+                 refreshCityRecords()
             }
             .alert(item: $alertIdentifier) { alert in
                 switch alert.id {
@@ -130,7 +133,8 @@ struct CityMainView: View {
             }
         }
     }
-
+    
+    /// <#Description#>
     func startInternetTracking() {
         /// Only fires once
         guard internetMonitor.pathUpdateHandler == nil else {
@@ -180,7 +184,7 @@ struct CityMainView: View {
     }
     
     /// Rutine for å friske opp bildet
-    func refreshCityRecords() {
+    func refreshCityRecords()  {
         /// Sletter alt tidligere innhold i cityRecords
         cityRecords.removeAll()
         let predicate = NSPredicate(value: true)

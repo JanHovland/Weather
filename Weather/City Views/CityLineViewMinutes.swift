@@ -114,6 +114,10 @@ struct CityLineViewMinutes: View {
                 d0 = 12.80
                 d1 = 755.00
                 d2 = 0.660
+            } else if UIScreen.screenWidth == 2048.0 {
+                d0 = 23.0
+                d1 = 1357.0
+                d2 = 0.660
             }
         }
     }

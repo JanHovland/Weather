@@ -6,6 +6,7 @@
 //
 
 import CloudKit
+
 import SwiftUI
 
 struct CloudKitCityRecord {

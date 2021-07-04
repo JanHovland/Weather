@@ -24,7 +24,9 @@ struct HudView: View {
                 self.showHUD = true
                 dismissHUD()
             }
-            .animation(.spring())
+            // .animation(.spring())
+            //.spring())
+             
     }
     
     func dismissHUD() {
