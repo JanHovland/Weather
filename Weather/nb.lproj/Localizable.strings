@@ -1,0 +1,162 @@
+/* No comment provided by engineer. */
+" hour(s)." = "time(r)";
+
+/* No comment provided by engineer. */
+" minute(s)." = " minutt(er)";
+
+/* No comment provided by engineer. */
+" Weather at: " = " Værmelding kl: ";
+
+/* No comment provided by engineer. */
+"1. Go to Settings on your iOS device and select the Weather App.\n\n2. Enter the correct key in the Api field.\n\n3. Start the Weather app again." = "1. Gå til Innstillinger på din iOS enhet og velg Værmelding appen.\n\n2. Legg inn riktig kode i Api feltet.\n\n3. Start Værmelding appen på nytt.";
+
+/* No comment provided by engineer. */
+"Add" = "Legg til";
+
+/* No comment provided by engineer. */
+"Add City" = "Legg til sted";
+
+/* No comment provided by engineer. */
+"Alert View" = "Varsel ";
+
+/* No comment provided by engineer. */
+"All city records have been deleted" = "Alle byene er slettet.";
+
+/* No comment provided by engineer. */
+"API key for Openweathermap is missing or incorrect." = "API-nøkkel for Openweathermap mangler eller er feil.";
+
+/* No comment provided by engineer. */
+"Cancel" = "Avbryt";
+
+/* No comment provided by engineer. */
+"Delete a city" = "Slette byen";
+
+/* No comment provided by engineer. */
+"Dew point: " = "Dugg punkt: ";
+
+/* No comment provided by engineer. */
+"Error API key" = "Legg inn API nøkkel";
+
+/* No comment provided by engineer. */
+"Error finding data 5 Days for : " = "Feil ved henting av data for 5 dager : ";
+
+/* No comment provided by engineer. */
+"Error finding data for : " = "Feil ved henting av data for : ";
+
+/* No comment provided by engineer. */
+"Error message from the Server" = "Feilmelding fra Serveren.";
+
+/* No comment provided by engineer. */
+"Error saving city" = "Feil ved lagring ab byen.";
+
+/* No comment provided by engineer. */
+"Feels like: " = "Føles som: ";
+
+/* No comment provided by engineer. */
+"Hour for hour" = "Time for time";
+
+/* No comment provided by engineer. */
+"Humidity" = "Luftfuktighet";
+
+/* No comment provided by engineer. */
+"Humidity: " = "Luftfuktighet: ";
+
+/* No comment provided by engineer. */
+"Location Search" = "Søk etter sted";
+
+/* No comment provided by engineer. */
+"mm" = "mm";
+
+/* No comment provided by engineer. */
+"mm/h" = "mm/t";
+
+/* No comment provided by engineer. */
+"No Internet connection for this device." = "Ingen Internett-tilkobling for denne enheten.";
+
+/* No comment provided by engineer. */
+"No Precipitation in the next 8 hours." = "Ikke noe nedbør de neste 8 timene.";
+
+/* No comment provided by engineer. */
+"Now" = "Nå";
+
+/* No comment provided by engineer. */
+"Precipitation" = "Nedbør";
+
+/* No comment provided by engineer. */
+"Precipitation in the next 8 hours." = "Det kommer nedbør i løpet av de neste 8 timene.";
+
+/* No comment provided by engineer. */
+"Precipitation in the next hour." = "Det kommer nedbør i løpet av den neste timen.";
+
+/* No comment provided by engineer. */
+"Precipitation will start in about " = "Nedbøren vil starte om ca. ";
+
+/* No comment provided by engineer. */
+"Press <Return> to exit to the Home Screen" = "Trykk på <Return> for å avslutte og komme tilbake til Hjem skjermen.";
+
+/* No comment provided by engineer. */
+"Pressure" = "Trykk";
+
+/* No comment provided by engineer. */
+"Pressure: " = "Trykk:     ";
+
+/* No comment provided by engineer. */
+"Probability of precipitation" = "Sannsynlighet for nedbør";
+
+/* No comment provided by engineer. */
+"Refresh" = "Frisk opp";
+
+/* No comment provided by engineer. */
+"Results" = "Resultater";
+
+/* No comment provided by engineer. */
+"Save" = "Lagre";
+
+/* No comment provided by engineer. */
+"Save city" = "Lagre by";
+
+/* No comment provided by engineer. */
+"Sunrise" = "Soloppgang";
+
+/* No comment provided by engineer. */
+"Sunset" = "Solnedgang";
+
+/* No comment provided by engineer. */
+"Temperature max/min" = "Temperatur maks/min";
+
+/* No comment provided by engineer. */
+"The city record has been deleted" = "Denne byen er nå slettet.";
+
+/* No comment provided by engineer. */
+"The city record has been modified in CloudKit" = "Denne byen er nå endret i CloudKit.";
+
+/* No comment provided by engineer. */
+"The city record has been saved in CloudKit" = "Byen er lagret i CloudKit.";
+
+/* No comment provided by engineer. */
+"This city exists in CloudKit " = "Denne byen finnes allerede i CloudKit.";
+
+/* No comment provided by engineer. */
+"toDo" = "Oppgaver";
+
+/* No comment provided by engineer. */
+"UV index" = "UV indeks";
+
+/* No comment provided by engineer. */
+"UV index: " = "UV indeks: ";
+
+/* No comment provided by engineer. */
+"Visibility: " = "Sikt:          ";
+
+/* No comment provided by engineer. */
+"Weather description" = "Værbeskrivelse";
+
+/* No comment provided by engineer. */
+"Weather overview" = "Vær oversikt ";
+
+/* No comment provided by engineer. */
+"Wind" = "Vind";
+
+/* No comment provided by engineer. */
+"Wind: " = "Vind: ";
+
