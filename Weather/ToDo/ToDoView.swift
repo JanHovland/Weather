@@ -39,9 +39,10 @@ var toDo_3 =
  10. 🟢 Legge inn:
         . 🟢 Soloppgang
         . 🟢 Soloppgang
- 11. 🟢 . Legge API nøkkelen inn i iPhone/iPad/iMac sine Innstillinger.
+ 11. 🟢 . Legge API nøkkelen inn i felles Instillinger.
+          "Settings bundle" virker bare i iPhone og iPad, måtte derfor lage en felles "Innstillingen"
         . 🟢 iPhone / iPad
-        . 🔴 iMac
+        . 🟢 iMac
  12. 🔴
 
 

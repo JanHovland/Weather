@@ -8,9 +8,6 @@
 " Weather at: " = " Værmelding kl: ";
 
 /* No comment provided by engineer. */
-"1. Go to Settings on your iOS device and select the Weather App.\n\n2. Enter the correct key in the Api field.\n\n3. Start the Weather app again." = "1. Gå til Innstillinger på din iOS enhet og velg Værmelding appen.\n\n2. Legg inn riktig kode i Api feltet.\n\n3. Start Værmelding appen på nytt.";
-
-/* No comment provided by engineer. */
 "Add" = "Legg til";
 
 /* No comment provided by engineer. */
@@ -23,7 +20,7 @@
 "All city records have been deleted" = "Alle byene er slettet.";
 
 /* No comment provided by engineer. */
-"API key for Openweathermap is missing or incorrect." = "API-nøkkel for Openweathermap mangler eller er feil.";
+"API KEY OPENWEATHERMAP" = "API NØKKEL FOR OPENWEATHERMAP";
 
 /* No comment provided by engineer. */
 "Cancel" = "Avbryt";
@@ -35,7 +32,7 @@
 "Dew point: " = "Dugg punkt: ";
 
 /* No comment provided by engineer. */
-"Error API key" = "Legg inn API nøkkel";
+"Enter a valid Api key to access the OpenWeatherMap" = "Legg inn en gyldig Ali key for å kunne kalle OpenWeatherMap.";
 
 /* No comment provided by engineer. */
 "Error finding data 5 Days for : " = "Feil ved henting av data for 5 dager : ";
@@ -92,7 +89,7 @@
 "Precipitation will start in about " = "Nedbøren vil starte om ca. ";
 
 /* No comment provided by engineer. */
-"Press <Return> to exit to the Home Screen" = "Trykk på <Return> for å avslutte og komme tilbake til Hjem skjermen.";
+"Press <Return> for the Home Screen" = "Trykk <Return> for Hjem skjermen.";
 
 /* No comment provided by engineer. */
 "Pressure" = "Trykk";
@@ -114,6 +111,9 @@
 
 /* No comment provided by engineer. */
 "Save city" = "Lagre by";
+
+/* No comment provided by engineer. */
+"Setting" = "Innstillinger";
 
 /* No comment provided by engineer. */
 "Sunrise" = "Soloppgang";
