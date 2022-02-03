@@ -35,7 +35,7 @@ struct cityAlertView: View {
                                         /// Rutine for å returnere til personoversikten
                                         presentationMode.wrappedValue.dismiss()
                                     }, label: {
-                                        ReturnFromMenuView(text: "Weather")
+                                        ReturnFromMenuView(text: NSLocalizedString("Weather", comment: ""))
                                     }))
             .padding()
         }

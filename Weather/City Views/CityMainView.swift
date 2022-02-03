@@ -28,9 +28,9 @@ struct cityMainView: View {
     @State private var indexSetDelete = IndexSet()
     @State private var deletedCity: String = ""
     @State private var message: LocalizedStringKey = ""
-    @State private var title: LocalizedStringKey = ""
+    @State private var title: String = ""
     @State private var choise: String = ""
-    @State private var device: LocalizedStringKey = ""
+    @State private var device: String = ""
 
     @State private var indicatorShowing = false
 
@@ -67,7 +67,7 @@ struct cityMainView: View {
                         cityRecords.removeAll()
                         Task.init {
                             await message = deleteCity(recordID!)
-                            title = "Delete a city"
+                            title = NSLocalizedString("Delete a city", comment: "")
                             isAlertActive.toggle()
                             ///
                             /// Viser resten av personene
@@ -130,7 +130,8 @@ struct cityMainView: View {
                             device = "iPad"
                         }
                         title = device
-                        message = "No Internet connection for this device."
+                        let msg = NSLocalizedString("No Internet connection for this device.", comment: "")
+                        message = LocalizedStringKey(msg)
                         isAlertActive.toggle()
                     } else {
                         if cityRecords.count == 0 {

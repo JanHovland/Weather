@@ -17,34 +17,19 @@
 "Alert View" = "Varsel ";
 
 /* No comment provided by engineer. */
-"All city records have been deleted" = "Alle byene er slettet.";
-
-/* No comment provided by engineer. */
 "API KEY OPENWEATHERMAP" = "API NØKKEL FOR OPENWEATHERMAP";
 
 /* No comment provided by engineer. */
 "Cancel" = "Avbryt";
 
 /* No comment provided by engineer. */
-"Delete a city" = "Slette byen";
+"Delete a city" = "Slett et sted";
 
 /* No comment provided by engineer. */
 "Dew point: " = "Dugg punkt: ";
 
 /* No comment provided by engineer. */
 "Enter a valid Api key to access the OpenWeatherMap" = "Legg inn en gyldig Ali key for å kunne kalle OpenWeatherMap.";
-
-/* No comment provided by engineer. */
-"Error finding data 5 Days for : " = "Feil ved henting av data for 5 dager : ";
-
-/* No comment provided by engineer. */
-"Error finding data for : " = "Feil ved henting av data for : ";
-
-/* No comment provided by engineer. */
-"Error message from the Server" = "Feilmelding fra Serveren.";
-
-/* No comment provided by engineer. */
-"Error saving city" = "Feil ved lagring ab byen.";
 
 /* No comment provided by engineer. */
 "Feels like: " = "Føles som: ";
@@ -68,7 +53,7 @@
 "mm/h" = "mm/t";
 
 /* No comment provided by engineer. */
-"No Internet connection for this device." = "Ingen Internett-tilkobling for denne enheten.";
+"No Internet connection for this device." = "Ingen internat forbindelse for denne enheten.";
 
 /* No comment provided by engineer. */
 "No Precipitation in the next 8 hours." = "Ikke noe nedbør de neste 8 timene.";
@@ -110,9 +95,6 @@
 "Save" = "Lagre";
 
 /* No comment provided by engineer. */
-"Save city" = "Lagre by";
-
-/* No comment provided by engineer. */
 "Setting" = "Innstillinger";
 
 /* No comment provided by engineer. */
@@ -125,18 +107,6 @@
 "Temperature max/min" = "Temperatur maks/min";
 
 /* No comment provided by engineer. */
-"The city record has been deleted" = "Denne byen er nå slettet.";
-
-/* No comment provided by engineer. */
-"The city record has been modified in CloudKit" = "Denne byen er nå endret i CloudKit.";
-
-/* No comment provided by engineer. */
-"The city record has been saved in CloudKit" = "Byen er lagret i CloudKit.";
-
-/* No comment provided by engineer. */
-"This city exists in CloudKit " = "Denne byen finnes allerede i CloudKit.";
-
-/* No comment provided by engineer. */
 "toDo" = "Oppgaver";
 
 /* No comment provided by engineer. */
@@ -147,6 +117,9 @@
 
 /* No comment provided by engineer. */
 "Visibility: " = "Sikt:          ";
+
+/* No comment provided by engineer. */
+"Weather" = "Vær oversikt";
 
 /* No comment provided by engineer. */
 "Weather description" = "Værbeskrivelse";

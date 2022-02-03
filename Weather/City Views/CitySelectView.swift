@@ -108,7 +108,7 @@ struct CitySelectView: View, Sendable {
                                                             }
                                                         } else {
                                                            message = "Error saving city"
-                                                            title = "Save city"
+                                                            title = LocalizedStringKey("Save city")
                                                             isAlertActive.toggle()
                                                         }
                                                     } else {
