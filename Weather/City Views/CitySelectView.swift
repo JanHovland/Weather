@@ -15,7 +15,7 @@ struct CitySelectView: View, Sendable {
     @Environment(\.presentationMode) var presentationMode
     
     @State private var message: LocalizedStringKey = ""
-    @State private var title: LocalizedStringKey = ""
+    @State private var title: String = ""
     @State private var choise: String = ""
     @State private var result: String = ""
     @State private var city: String = ""
@@ -85,7 +85,7 @@ struct CitySelectView: View, Sendable {
                                                     ///Feilmelding
                                                     ///
                                                     message = value.0
-                                                    title = "Error message from the Server"
+                                                    title = NSLocalizedString("Error message from the Server", comment: "CitySelectView")
                                                     isAlertActive.toggle()
                                                 } else {
                                                     if value.1 == nil {
@@ -103,17 +103,19 @@ struct CitySelectView: View, Sendable {
                                                                                         city: city)
                                                             Task.init {
                                                                 await message = saveCity(cityRecord)
-                                                                title = LocalizedStringKey("Save city")
+                                                                title = NSLocalizedString("Save city", comment: "CitySelectView")
                                                                 isAlertActive.toggle()
                                                             }
                                                         } else {
-                                                           message = "Error saving city"
-                                                            title = LocalizedStringKey("Save city")
+                                                            let msg = NSLocalizedString("Error saving city", comment: "CitySelectView")
+                                                            message = LocalizedStringKey(msg)
+                                                            title = NSLocalizedString("Save city", comment: "CitySelectView")
                                                             isAlertActive.toggle()
                                                         }
                                                     } else {
-                                                        message = "This city exists in CloudKit "
-                                                        title = "Save"
+                                                        let msg = NSLocalizedString("This city exists in CloudKit ", comment: "CitySelectView")
+                                                        message = LocalizedStringKey(msg)
+                                                        title = NSLocalizedString("Save", comment: "CitySelectView")
                                                         isAlertActive.toggle()
                                                     }
                                                 }

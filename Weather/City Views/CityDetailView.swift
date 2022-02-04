@@ -28,7 +28,7 @@ struct cityDetailView: View, Sendable {
     var city: String
     
     @State private var message: LocalizedStringKey = ""
-    @State private var title: LocalizedStringKey = ""
+    @State private var title: String = ""
     @State private var dailyRecords = [DailyRecord]()
     @State private var hourlyRecords = [HourlyRecord]()
     
@@ -346,7 +346,7 @@ struct cityDetailView: View, Sendable {
             
             if value.0 != "" {
                 message = value.0
-                title = "Error message from the Server"
+                title = NSLocalizedString("Error message from the Server", comment: "refreshCityRecordDetail")
                 isAlertActive.toggle()
             } else {
                 let cityRecord = value.1[0]
@@ -654,16 +654,19 @@ struct cityDetailView: View, Sendable {
                         
                         
                     } else {
-                        title = "Error finding data "
-                        message = "Error finding data 5 Days for : \(city)"
+                        title = NSLocalizedString("Error finding data ", comment: "refreshCityRecordDetail")
+                        let msg1 = NSLocalizedString("Error finding data 5 Days for : ", comment: "refreshCityRecordDetail")
+                        let msg2 = msg1 + "\(city)"
+                        message = LocalizedStringKey(msg2)
                         isAlertActive.toggle()
                     }
                 } else {
-                    title = "Error finding data"
-                    message = "Error finding data for : \(city)"
+                    title = NSLocalizedString("Error finding data", comment: "refreshCityRecordDetail")
+                    let msg1 = NSLocalizedString("Error finding data for :",  comment: "refreshCityRecordDetail")
+                    let msg2 = msg1 + "\(city)"
+                    message = LocalizedStringKey(msg2)
                     isAlertActive.toggle()
                 }
-                
             }
         }
     } // Task.init

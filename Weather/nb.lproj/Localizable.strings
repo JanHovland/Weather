@@ -16,6 +16,9 @@
 /* No comment provided by engineer. */
 "Alert View" = "Varsel ";
 
+/* deleteCitys */
+"All city records have been deleted" = "Alle stedene er nå slettet.";
+
 /* No comment provided by engineer. */
 "API KEY OPENWEATHERMAP" = "API NØKKEL FOR OPENWEATHERMAP";
 
@@ -30,6 +33,25 @@
 
 /* No comment provided by engineer. */
 "Enter a valid Api key to access the OpenWeatherMap" = "Legg inn en gyldig Ali key for å kunne kalle OpenWeatherMap.";
+
+/* refreshCityRecordDetail */
+"Error finding data" = "Feil med henting av data.";
+
+/* refreshCityRecordDetail */
+"Error finding data " = "Feil med henting av data.";
+
+/* refreshCityRecordDetail */
+"Error finding data 5 Days for : " = "Feil med henting av 5 dagers data for : ";
+
+/* refreshCityRecordDetail */
+"Error finding data for :" = "Feil med henting av data for : ";
+
+/* CitySelectView
+   refreshCityRecordDetail */
+"Error message from the Server" = "Feilmelding fra Serveren.";
+
+/* CitySelectView */
+"Error saving city" = "Feil med lagring av stedet.";
 
 /* No comment provided by engineer. */
 "Feels like: " = "Føles som: ";
@@ -91,8 +113,11 @@
 /* No comment provided by engineer. */
 "Results" = "Resultater";
 
-/* No comment provided by engineer. */
+/* CitySelectView */
 "Save" = "Lagre";
+
+/* CitySelectView */
+"Save city" = "Lagre sted";
 
 /* No comment provided by engineer. */
 "Setting" = "Innstillinger";
@@ -105,6 +130,18 @@
 
 /* No comment provided by engineer. */
 "Temperature max/min" = "Temperatur maks/min";
+
+/* deleteCity */
+"The city record has been deleted" = "Stedet er nå slettet.";
+
+/* modifyCity */
+"The city record has been modified in CloudKit" = "Stedet er nå endret i CloudKit.";
+
+/* saveCity */
+"The city record has been saved in CloudKit" = "Stedet er nå lagret i CloudKit.";
+
+/* CitySelectView */
+"This city exists in CloudKit " = "Dette stedet finnes allerede i CloudKit.";
 
 /* No comment provided by engineer. */
 "toDo" = "Oppgaver";

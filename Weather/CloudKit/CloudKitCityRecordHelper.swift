@@ -13,7 +13,8 @@ func saveCity(_ cityRecord: CityRecord) async -> LocalizedStringKey {
     var message : LocalizedStringKey = ""
     do {
         try await CloudKitCityRecord.saveCity(cityRecord)
-        message = LocalizedStringKey("The city record has been saved in CloudKit")
+        let msg = NSLocalizedString("The city record has been saved in CloudKit", comment: "saveCity")
+        message = LocalizedStringKey(msg)
         return message
     } catch {
         message = LocalizedStringKey(error.localizedDescription)
@@ -53,7 +54,8 @@ func deleteCity(_ recID: CKRecord.ID) async -> LocalizedStringKey {
     var message: LocalizedStringKey = ""
     do {
         try await CloudKitCityRecord.deleteCity(recID)
-        message = "The city record has been deleted"
+        let msg = NSLocalizedString("The city record has been deleted", comment: "deleteCity")
+        message = LocalizedStringKey(msg)
         return message
     } catch {
         message = LocalizedStringKey(error.localizedDescription)
@@ -66,7 +68,8 @@ func modifyCity(_ cityRecord: CityRecord) async -> LocalizedStringKey {
     var message: LocalizedStringKey = ""
     do {
         try await CloudKitCityRecord.modifyCity(cityRecord)
-        message = "The city record has been modified in CloudKit"
+        let msg = NSLocalizedString("The city record has been modified in CloudKit", comment: "modifyCity")
+        message = LocalizedStringKey(msg)
         return message
     } catch {
         message = LocalizedStringKey(error.localizedDescription)
@@ -93,7 +96,8 @@ func deleteCitys(_ predicate: NSPredicate,_ recID: CKRecord.ID) async -> Localiz
     var message: LocalizedStringKey = ""
     do {
         try await CloudKitCityRecord().deleteCitys(predicate, recID)
-        message = "All city records have been deleted"
+        let msg = NSLocalizedString("All city records have been deleted", comment: "deleteCitys")
+        message = LocalizedStringKey(msg)
         return message
     } catch {
         message = LocalizedStringKey(error.localizedDescription)

@@ -46,7 +46,7 @@ var toDo_3 =
  12. 🟢 WeatherServiceDetail5Days.swift:
         . Feil: LocalizedStringKey(key: "Dataene kunne ikke leses fordi de ikke har riktig format.", hasFormatting: false, arguments: [])
         . Det manglet en "=" foran API nøkkelen i url.
- 13. 🔴 Legge OpenWeatherMap sin url som global variabel i CityMainView.swift
+ 13. 🔴 .
 
 
 """
