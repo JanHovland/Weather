@@ -59,7 +59,7 @@ struct cityDayView: View {
             ///
             
             HStack (spacing: 20) {
-                ForEach(dailyRecords.indices) { index in
+                ForEach(dailyRecords.indices, id: \.self) { index in
                     VStack (alignment: .center) {
                         Text(String(IntervalToWeekDay(interval: dailyRecords[index].dt)))
                         Text(String(IntervalToDayOfMonth(interval: dailyRecords[index].dt)))
@@ -92,7 +92,7 @@ struct cityDayView: View {
             
             GeometryReader { outerView in
                 HStack(spacing: 0) {
-                    ForEach(dailyRecords.indices) { index in
+                    ForEach(dailyRecords.indices, id: \.self) { index in
                         GeometryReader { innerView in
                             VStack {
                                 HStack (spacing: 0) {

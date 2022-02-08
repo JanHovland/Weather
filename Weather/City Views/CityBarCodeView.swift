@@ -13,7 +13,7 @@ struct cityBarCodeView: View {
     var body: some View {
         GeometryReader { outer in
             HStack (alignment: .bottom) {
-                ForEach (datas.indices) { i in
+                ForEach (datas.indices, id: \.self) { i in
                     VStack {
                         Spacer()
                         Text(String(datas[i]))

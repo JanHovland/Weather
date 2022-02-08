@@ -250,8 +250,8 @@ struct DetailLine: View {
                 Spacer()
             }
             Group {
-                let msg1 = String(format:"%.0f", hourlyRecord.temp)
-                Text(msg1)
+                let msg = String(format:"%.0f", hourlyRecord.temp)
+                Text(msg)
                     .modifier(ForeGroundColor(temp: hourlyRecord.temp))
                     .font(.system(size: 18, weight: .regular))
                 Text("ºC")

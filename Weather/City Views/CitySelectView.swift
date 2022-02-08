@@ -23,7 +23,7 @@ struct CitySelectView: View, Sendable {
     
     @State private var isAlertActive = false
     
-    @State var weatherServiceCoordinate = WeatherServiceCoordinate()
+    var weatherServiceCoordinate = WeatherServiceCoordinate()
    
     var body: some View {
         VStack {
