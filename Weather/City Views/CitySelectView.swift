@@ -22,8 +22,9 @@ struct CitySelectView: View, Sendable {
     @State private var recordID: String = ""
     
     @State private var isAlertActive = false
-    
-    var weatherServiceCoordinate = WeatherServiceCoordinate()
+    @MainActor
+    var weatherServiceCityCoordinates = WeatherServiceCityCoordinates()
+//    var weatherServiceCoordinate = WeatherServiceCoordinate()
    
     var body: some View {
         VStack {
@@ -94,8 +95,13 @@ struct CitySelectView: View, Sendable {
                                                         ///Finn koordinatene
                                                         ///
                                                         
-                                                        var value : (LocalizedStringKey, WeatherCoordinates)
-                                                        await value = weatherServiceCoordinate.getCoordinates(city)
+                                                        var value : (LocalizedStringKey, WeatherCityCoordinates)
+                                                        await value = weatherServiceCityCoordinates.CityCoordinates(city)
+                                                        
+//                                                        var value : (LocalizedStringKey, WeatherCoordinates)
+//                                                        await value = weatherServiceCoordinate.getCoordinates(city)
+
+                                                        
                                                         if value.0 == "" {
                                                             let cityRecord = CityRecord(recordID: nil,
                                                                                         lat: value.1.coord.lat,

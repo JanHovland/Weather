@@ -59,6 +59,7 @@
 		DBE7F958261CAA96008B6F3F /* CityLineViewMinutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE7F957261CAA96008B6F3F /* CityLineViewMinutes.swift */; };
 		DBF28E0E25F92CF800167B5C /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF28E0D25F92CF800167B5C /* Utility.swift */; };
 		DBF28E1325FA37A200167B5C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DBF28E1125FA37A200167B5C /* InfoPlist.strings */; };
+		DBFD218A27B4305C00A82D27 /* WeatherServiceCityCoordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFD218927B4305C00A82D27 /* WeatherServiceCityCoordinates.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -117,6 +118,7 @@
 		DBE7F957261CAA96008B6F3F /* CityLineViewMinutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityLineViewMinutes.swift; sourceTree = "<group>"; };
 		DBF28E0D25F92CF800167B5C /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		DBF28E1225FA37A200167B5C /* nb */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nb; path = nb.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DBFD218927B4305C00A82D27 /* WeatherServiceCityCoordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherServiceCityCoordinates.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +214,7 @@
 				DB556FD525F8E36F0047DC97 /* WeatherServiceCoordinate.swift */,
 				DB0BA68126074AB500C31AF3 /* WeatherServiceDetail.swift */,
 				DB46E3AC27737A1500559217 /* WeatherServiceDetail5Days.swift */,
+				DBFD218927B4305C00A82D27 /* WeatherServiceCityCoordinates.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -414,6 +417,7 @@
 				DB4BA1D826244C6B005F4EF6 /* CityDayView.swift in Sources */,
 				DBE7F958261CAA96008B6F3F /* CityLineViewMinutes.swift in Sources */,
 				DB19CC4B26147E42007E3304 /* MinutelyRecord.swift in Sources */,
+				DBFD218A27B4305C00A82D27 /* WeatherServiceCityCoordinates.swift in Sources */,
 				DB727915261F474600BC43FD /* CityAlertView.swift in Sources */,
 				DB9E07B325FE7F8D00449860 /* CityRowView.swift in Sources */,
 				DB19CC4726135323007E3304 /* DailyDetailView.swift in Sources */,
@@ -500,7 +504,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -556,7 +560,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

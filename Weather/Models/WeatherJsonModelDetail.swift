@@ -25,14 +25,14 @@ import Foundation
 /// Coordinates
 ///
 
-struct WeatherCoordinates : Decodable {
-    var coord = Coordinates()
-}
-
-struct Coordinates : Decodable {
-    var lon = Double()
-    var lat = Double()
-}
+//struct WeatherCoordinates : Decodable {
+//    var coord = Coordinates()
+//}
+//
+//struct Coordinates : Decodable {
+//    var lon = Double()
+//    var lat = Double()
+//}
 
 ///
 ///Wheather data
@@ -321,3 +321,80 @@ struct Wind1: Codable {
     var gust = Double()
 }
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// MARK: - WeatherCityCoordinates
+struct WeatherCityCoordinates: Codable {
+    var coord = Coord1()
+    var weather = [Weather1]()
+    var base = String()
+    var main = Main()
+    var visibility = Int()
+    var wind = Wind2()
+    var clouds = Clouds1()
+    var dt = Int()
+    var sys = Sys1()
+    var timezone = Int()
+    var id = Int()
+    var name = String()
+    var cod = Int()
+}
+
+// MARK: - Clouds1
+struct Clouds1: Codable {
+    var all = Int()
+}
+
+// MARK: - Coord1
+struct Coord1: Codable {
+    var lon = Double()
+    var lat = Double()
+}
+
+// MARK: - Main
+struct Main: Codable {
+    var temp = Double()
+    var feelsLike = Double()
+    var tempMin = Double()
+    var tempMax = Double()
+    var pressure = Int()
+    var humidity = Int()
+
+    enum CodingKeys: String, CodingKey {
+        case temp
+        case feelsLike = "feels_like"
+        case tempMin = "temp_min"
+        case tempMax = "temp_max"
+        case pressure, humidity
+    }
+}
+
+// MARK: - Sys1
+struct Sys1: Codable {
+    var type = Int()
+    var id = Int()
+    var country = String()
+    var sunrise = Int()
+    var sunset = Int()
+}
+
+// MARK: - Weather
+struct Weather1: Codable {
+    var id = Int()
+    var main = String()
+    var weatherDescription = String()
+    var icon = String()
+
+    enum CodingKeys: String, CodingKey {
+        case id, main
+        case weatherDescription = "description"
+        case icon
+    }
+}
+
+// MARK: - Wind2
+struct Wind2: Codable {
+    var speed = Double()
+    var deg = Int()
+}
