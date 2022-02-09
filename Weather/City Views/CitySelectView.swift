@@ -11,7 +11,8 @@ import CloudKit
 struct CitySelectView: View, Sendable {
     
     @ObservedObject var locationService: LocationService
-    
+    @State private var weatherServiceCityCoordinates = WeatherServiceCityCoordinates()
+
     @Environment(\.presentationMode) var presentationMode
     
     @State private var message: LocalizedStringKey = ""
@@ -22,8 +23,7 @@ struct CitySelectView: View, Sendable {
     @State private var recordID: String = ""
     
     @State private var isAlertActive = false
-    @State private var weatherServiceCityCoordinates = WeatherServiceCityCoordinates()
-
+    
     var body: some View {
         VStack {
             HStack {

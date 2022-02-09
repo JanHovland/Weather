@@ -307,9 +307,6 @@ struct Wind1: Codable {
     var gust = Double()
 }
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
 // MARK: - WeatherCityCoordinates
 struct WeatherCityCoordinates: Codable {
     var coord = Coord1()
@@ -319,12 +316,24 @@ struct WeatherCityCoordinates: Codable {
     var visibility = Int()
     var wind = Wind2()
     var clouds = Clouds1()
+    var rain : RainSnow?
+    var snow : RainSnow?
     var dt = Int()
     var sys = Sys1()
     var timezone = Int()
     var id = Int()
     var name = String()
     var cod = Int()
+}
+
+struct RainSnow: Codable {
+    var the1H : Double?
+    var the3H : Double?
+
+    enum CodingKeys: String, CodingKey {
+        case the1H = "1h"
+        case the3H = "3h"
+    }
 }
 
 // MARK: - Clouds1
@@ -346,6 +355,8 @@ struct Main: Codable {
     var tempMax = Double()
     var pressure = Int()
     var humidity = Int()
+    var seaLevel : Int?
+    var grndLevel : Int?
 
     enum CodingKeys: String, CodingKey {
         case temp
@@ -353,6 +364,8 @@ struct Main: Codable {
         case tempMin = "temp_min"
         case tempMax = "temp_max"
         case pressure, humidity
+        case seaLevel = "sea_level"
+        case grndLevel = "grnd_level"
     }
 }
 
@@ -360,6 +373,7 @@ struct Main: Codable {
 struct Sys1: Codable {
     var type = Int()
     var id = Int()
+    var message: String?
     var country = String()
     var sunrise = Int()
     var sunset = Int()
@@ -383,4 +397,5 @@ struct Weather1: Codable {
 struct Wind2: Codable {
     var speed = Double()
     var deg = Int()
+    var gust: Int?
 }
