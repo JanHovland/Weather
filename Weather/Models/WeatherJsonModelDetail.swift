@@ -20,20 +20,6 @@ import Foundation
 ///     et av feltene ikke kommer, ref var alerts: [Alerts]? :  Handlingen kunne ikke fullføres. (Weather.NetworkError-feil 2) sett dette til optional
 ///
 
-
-///
-/// Coordinates
-///
-
-//struct WeatherCoordinates : Decodable {
-//    var coord = Coordinates()
-//}
-//
-//struct Coordinates : Decodable {
-//    var lon = Double()
-//    var lat = Double()
-//}
-
 ///
 ///Wheather data
 ///
