@@ -8,7 +8,6 @@
 import Foundation
 import SwiftUI
 
-// @MainActor
 class WeatherServiceCityCoordinates: ObservableObject {
     @Published var weatherCityCoordinates = WeatherCityCoordinates()
     func CityCoordinates(_ city: String) async -> (LocalizedStringKey, WeatherCityCoordinates) {

@@ -19,7 +19,7 @@ extension URL {
         guard let url = URL(string: "http://api.openweathermap.org/data/2.5/weather?q=\(city)&lang=no&units=metric&appid=" + apiKey) else {
             return nil
         }
-        print(url)
+//        print(url)
         return url
     }
     
@@ -27,7 +27,7 @@ extension URL {
         guard let url = URL(string: "https://api.openweathermap.org/data/2.5/onecall?lat=\(lat)&lon=\(lon)&lang=no&units=metric&appid=" + apiKey) else {
             return nil
         }
-        print(url)
+//        print(url)
         return url
     }
 

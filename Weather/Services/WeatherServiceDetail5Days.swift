@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-@MainActor
 class WeatherData5Days: ObservableObject {
     @Published var weatherDetail5Days = WeatherDetail5Days()
     func getWeather5Days(_ lat: Double, _ lon: Double) async -> (LocalizedStringKey, WeatherDetail5Days) {

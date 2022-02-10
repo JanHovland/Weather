@@ -1,5 +1,5 @@
 //
-//  Utility.swift
+//  DateFormatting.swift
 //  Weather
 //
 //  Created by Jan Hovland on 10/03/2021.

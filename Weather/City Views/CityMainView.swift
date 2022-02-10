@@ -178,7 +178,7 @@ struct cityMainView: View {
         await value = findCitys(predicate)
         if value.0 != "" {
             message = value.0
-            title = "Error message from the Server"
+            title = NSLocalizedString("Error message from the Server", comment: "")
             isAlertActive.toggle()
         } else {
             cityRecords = value.1
