@@ -16,6 +16,6 @@ struct CityRecord: Identifiable, Sendable {
     var city: String = ""
 }
 
-extension UUID: Sendable {}
-extension CKRecord.ID: Sendable {}
-extension NSPredicate: Sendable {}
+extension UUID: @unchecked Sendable {}
+extension CKRecord.ID: @unchecked Sendable {}
+extension NSPredicate: @unchecked Sendable {}
