@@ -1,5 +1,5 @@
 //
-//  ApiJson.swift
+//  LonLat.swift
 //  Weather
 //
 //  Created by Jan Hovland on 03/08/2022.
@@ -7,79 +7,72 @@
 
 import Foundation
 
-// MARK: - Welcome
-struct Welcome: Codable {
-    let results: [Result]
-    let query: Query
+// MARK: - LonLat
+struct LonLat : Decodable {
+    var results = [Result]()
+    var query = Query()
 }
 
 // MARK: - Query
-struct Query: Codable {
-    let text: String
-    let parsed: Parsed
+struct Query : Decodable {
+    var text = String()
+    var parsed = Parsed()
 }
 
 // MARK: - Parsed
-struct Parsed: Codable {
-    let city, country, expectedType: String
-
-    enum CodingKeys: String, CodingKey {
-        case city, country
-        case expectedType = "expected_type"
-    }
+struct Parsed : Decodable {
+    var city = String()
+    var country = String()
+    var expectedType = String()
 }
 
 // MARK: - Result
-struct Result: Codable {
-    let datasource: Datasource
-    let name, suburb, city, county: String
-    let postcode, country, countryCode: String
-    let hamlet: String?
-    let lon, lat: Double
-    let formatted, addressLine1, addressLine2: String
-    let category: String?
-    let resultType: String
-    let rank: Rank
-    let placeID: String
-    let bbox: Bbox
-    let street: String?
-
-    enum CodingKeys: String, CodingKey {
-        case datasource, name, suburb, city, county, postcode, country
-        case countryCode = "country_code"
-        case hamlet, lon, lat, formatted
-        case addressLine1 = "address_line1"
-        case addressLine2 = "address_line2"
-        case category
-        case resultType = "result_type"
-        case rank
-        case placeID = "place_id"
-        case bbox, street
-    }
+struct Result : Decodable {
+    var datasource = Datasource()
+    var name = String()
+    var suburb = String()
+    var city = String()
+    var county = String()
+    var postcode = String()
+    var country = String()
+    var countryCode = String()
+    var hamlet : String?
+    var lon = Double()
+    var lat = Double()
+    var formatted = String()
+    var addressLine1 = String()
+    var addressLine2 = String()
+    var category : String?
+    var resultType = String()
+    var rank = Rank()
+    var placeID = String()
+    var bbox = Bbox()
+    var street: String?
 }
 
 // MARK: - Bbox
-struct Bbox: Codable {
-    let lon1, lat1, lon2, lat2: Double
+struct Bbox : Decodable {
+    var lon1 = Double()
+    var lat1 = Double()
+    var lon2 = Double()
+    var lat2 = Double()
 }
 
 // MARK: - Datasource
-struct Datasource: Codable {
-    let sourcename, attribution, license: String
-    let url: String
+struct Datasource : Decodable {
+    var sourcename = String()
+    var attribution = String()
+    var license = String()
+    var url = String()
 }
 
 // MARK: - Rank
-struct Rank: Codable {
-    let importance, popularity: Double
-    let confidence, confidenceCityLevel: Int
-    let matchType: String
-
-    enum CodingKeys: String, CodingKey {
-        case importance, popularity, confidence
-        case confidenceCityLevel = "confidence_city_level"
-        case matchType = "match_type"
-    }
+struct Rank : Decodable {
+    var importance = Double()
+    var popularity = Double()
+    var confidence = Int()
+    var confidenceCityLevel = Int()
+    var matchType = String()
 }
 
 /*
