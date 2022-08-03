@@ -52,6 +52,7 @@
 		DBAD9EFF2601374E00623BC1 /* ToDoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBAD9EFE2601374E00623BC1 /* ToDoView.swift */; };
 		DBB8A34227A9D63D00DCF03C /* OpenOfficeApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB8A34127A9D63D00DCF03C /* OpenOfficeApiKey.swift */; };
 		DBB8A34427AAC04600DCF03C /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB8A34327AAC04600DCF03C /* Setting.swift */; };
+		DBB968F6289A8ED8004AB01D /* ApiJson.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB968F5289A8ED8004AB01D /* ApiJson.swift */; };
 		DBCF0BA2277087FB00ACACF7 /* Daily_Records.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCF0BA1277087FB00ACACF7 /* Daily_Records.swift */; };
 		DBCF0BA427708BAC00ACACF7 /* Current_Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCF0BA327708BAC00ACACF7 /* Current_Record.swift */; };
 		DBE7F956261CAA5B008B6F3F /* CityBarCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE7F955261CAA5B008B6F3F /* CityBarCodeView.swift */; };
@@ -110,6 +111,7 @@
 		DBAD9EFE2601374E00623BC1 /* ToDoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoView.swift; sourceTree = "<group>"; };
 		DBB8A34127A9D63D00DCF03C /* OpenOfficeApiKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenOfficeApiKey.swift; sourceTree = "<group>"; };
 		DBB8A34327AAC04600DCF03C /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
+		DBB968F5289A8ED8004AB01D /* ApiJson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiJson.swift; sourceTree = "<group>"; };
 		DBCF0BA1277087FB00ACACF7 /* Daily_Records.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Daily_Records.swift; sourceTree = "<group>"; };
 		DBCF0BA327708BAC00ACACF7 /* Current_Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Current_Record.swift; sourceTree = "<group>"; };
 		DBE7F955261CAA5B008B6F3F /* CityBarCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityBarCodeView.swift; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 				DB4D522C2768894F00558789 /* ActivityIndicator.swift */,
 				DBF28E0D25F92CF800167B5C /* DateFormatting.swift */,
 				DB5EA33427A8432D00E78164 /* MakeAttributedString.swift */,
+				DBB968F5289A8ED8004AB01D /* ApiJson.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 			files = (
 				DB9E07B525FE81A000449860 /* CityDetailView.swift in Sources */,
 				DBF28E0E25F92CF800167B5C /* DateFormatting.swift in Sources */,
+				DBB968F6289A8ED8004AB01D /* ApiJson.swift in Sources */,
 				DB46E3AD27737A1500559217 /* WeatherServiceDetail5Days.swift in Sources */,
 				DB46E3B12773881D00559217 /* Alert_Record.swift in Sources */,
 				DB9E07B125FCB3A000449860 /* CloudKitCityRecord.swift in Sources */,

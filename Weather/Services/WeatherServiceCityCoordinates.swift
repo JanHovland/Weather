@@ -8,6 +8,10 @@
 import Foundation
 import SwiftUI
 
+// https://www.latlong.net/convert-address-to-lat-long.html
+// https://www.geoapify.com/pricing
+// https://apidocs.geoapify.com/docs/geocoding/forward-geocoding/#about
+
 class WeatherServiceCityCoordinates: ObservableObject {
     @Published var weatherCityCoordinates = WeatherCityCoordinates()
     func CityCoordinates(_ city: String) async -> (LocalizedStringKey, WeatherCityCoordinates) {
