@@ -341,6 +341,17 @@ struct cityDetailView: View, Sendable {
        let predicate = NSPredicate(format: "city = %@", city)
         
         Task.init {
+            
+//            var valueX : (LocalizedStringKey, LonLat)
+//            await valueX = LonLatServiceDetail().getLonLatDetail()
+//
+//            print(valueX.1)
+            
+            
+            
+            
+            
+            
             var value: (LocalizedStringKey, [CityRecord])
             await value = findCitys(predicate)
             
